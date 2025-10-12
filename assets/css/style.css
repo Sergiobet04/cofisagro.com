@@ -1,1 +1,77 @@
 :root{--g:#31C24A;--gd:#0E8B3D;--g50:#F6FAF7;--g100:#EEF2F6;--tx:#1F2937}*{box-sizing:border-box}body{margin:0;font-family:Inter,system-ui,Segoe UI,Roboto,Arial,sans-serif;color:var(--tx)}.container{max-width:1200px;margin:0 auto;padding:0 20px}.nav{position:sticky;top:0;z-index:50;background:#fffcc;background:rgba(255,255,255,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--g100)}.nav .inner{display:flex;align-items:center;justify-content:space-between;height:64px}.brand{display:flex;gap:10px;align-items:center;font-weight:800}.brand img{width:36px;height:36px}.menu{display:flex;gap:16px}.menu a{padding:10px 12px;border-radius:10px}.menu a:hover{background:var(--g50)}.btn{display:inline-flex;align-items:center;gap:8px;background:var(--g);color:#fff;padding:12px 16px;border-radius:12px;font-weight:700}.btn.outline{background:#fff;color:var(--gd);border:2px solid var(--gd)}.badge{display:inline-block;background:rgba(49,194,74,.12);color:var(--gd);padding:6px 10px;border-radius:999px;font-weight:700}.section{padding:64px 0}.grid2{display:grid;grid-template-columns:1fr 1fr;gap:24px}.card{background:#fff;border:1px solid var(--g100);border-radius:16px;padding:22px;box-shadow:0 8px 24px rgba(0,0,0,.06)}h1{font-size:clamp(32px,4.5vw,48px);margin:12px 0}h2{font-size:clamp(24px,3vw,36px);margin:0 0 8px}.hero{background:linear-gradient(180deg,#f7fff9,#fff);border-bottom:1px solid var(--g100)}.hero .grid{display:grid;grid-template-columns:1.1fr .9fr;gap:28px;align-items:center;padding:60px 0}.metrics{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}.metric{border:1px solid var(--g100);border-radius:14px;padding:12px;text-align:center}.pills span{display:inline-block;background:var(--g50);padding:8px 12px;border-radius:999px;margin:6px 6px 0 0;font-weight:600}footer{background:#0D1B1A;color:#d6e5db}footer a{color:#d6e5db}.top{background:var(--gd)}.foot{display:grid;grid-template-columns:2fr 1fr 1fr 1.2fr;gap:20px}.whatsapp{position:fixed;right:16px;bottom:16px;background:var(--gd);color:#fff;border-radius:999px;padding:12px 16px;font-weight:700;box-shadow:0 8px 24px rgba(0,0,0,.2)}@media(max-width:900px){.grid2,.metrics{grid-template-columns:1fr}.hero .grid{grid-template-columns:1fr}.menu{display:none}.menu.open{display:flex;flex-direction:column;position:absolute;left:0;right:0;top:64px;background:#fff;border-bottom:1px solid var(--g100)}.toggle{display:block;border:1px solid var(--g100);background:#fff;padding:8px 10px;border-radius:10px}}
+/* === ESTILOS NUEVOS PARA EL ENCABEZADO VERDE === */
+
+:root{
+  --brand:#0E8B3D;      /* verde principal */
+  --brand-600:#31C24A;  /* verde claro botón */
+  --nav-text:#ffffff;
+}
+
+/* ENCABEZADO VERDE */
+.site-header{
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: var(--brand);
+  box-shadow: 0 2px 8px rgba(0,0,0,.1);
+}
+
+.site-header .container.nav{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:14px 20px;
+}
+
+.brand{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  text-decoration:none;
+}
+
+.brand-logo{
+  width:32px;
+  height:32px;
+}
+
+.brand-text{
+  color: var(--nav-text);
+  font-weight:800;
+  letter-spacing:.3px;
+}
+
+.menu{
+  display:flex;
+  align-items:center;
+  gap:22px;
+}
+
+.menu a{
+  color: var(--nav-text);
+  text-decoration: none;       /* sin subrayado */
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.menu a:hover{
+  opacity:.9;
+}
+
+/* BOTÓN DE CONTACTO */
+.btn-cta{
+  background: var(--brand-600);
+  color:#fff !important;
+  padding:10px 16px;
+  border-radius:10px;
+  text-decoration:none;
+  display:inline-block;
+}
+
+/* FOOTER: sin subrayado */
+footer a{
+  text-decoration:none;
+}
+footer a:hover{
+  text-decoration:underline;
+}
