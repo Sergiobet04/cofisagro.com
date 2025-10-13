@@ -21,8 +21,12 @@ body{
 }
 .container{ max-width:1200px; margin:0 auto; padding:0 20px; }
 
+a{ color:inherit; text-decoration:none; }
+a:hover{ text-decoration:underline; }
+
 /* =========================
    ENCABEZADO VERDE COMPLETO
+   (NO hay estilos .nav viejos)
    ========================= */
 .site-header{
   position: sticky;
@@ -48,12 +52,7 @@ body{
   gap: 10px;
   text-decoration: none;
 }
-
-.brand-logo{
-  width: 40px;
-  height: 40px;
-}
-
+.brand-logo{ width: 40px; height: 40px; }
 .brand-text{
   color: #fff;
   font-weight: 800;
@@ -66,7 +65,6 @@ body{
   align-items: center;
   gap: 28px;
 }
-
 .menu a{
   color: #fff;
   text-decoration: none;
@@ -74,10 +72,7 @@ body{
   padding: 10px 0;
   transition: 0.3s;
 }
-
-.menu a:hover{
-  opacity: 0.8;
-}
+.menu a:hover{ opacity: 0.85; }
 
 /* Botón "Contacto" del menú */
 .btn-cta{
@@ -90,13 +85,10 @@ body{
   font-weight: 700;
   transition: 0.3s;
 }
-
-.btn-cta:hover{
-  background: #29a945;
-}
+.btn-cta:hover{ background: #29a945; }
 
 /* =========================
-   COMPONENTES GENERALES
+   Componentes
    ========================= */
 .btn{
   display:inline-flex;
@@ -175,16 +167,13 @@ h2{ font-size:clamp(24px,3vw,36px); margin:0 0 8px; }
 }
 
 /* =========================
-   FOOTER
+   Footer
    ========================= */
 footer{
   background:#0D1B1A;
   color:#d6e5db;
 }
-footer a{
-  color:#d6e5db;
-  text-decoration:none;
-}
+footer a{ color:#d6e5db; }
 footer a:hover{ text-decoration:underline; }
 .top{ background:var(--brand); }
 .foot{
@@ -194,7 +183,7 @@ footer a:hover{ text-decoration:underline; }
 }
 
 /* =========================
-   BOTÓN FLOTANTE WHATSAPP
+   Botón flotante WhatsApp
    ========================= */
 .whatsapp{
   position:fixed;
@@ -210,13 +199,7 @@ footer a:hover{ text-decoration:underline; }
 }
 
 /* =========================
-   ENLACES GLOBALES (fuera del header)
-   ========================= */
-a{ color:inherit; text-decoration:none; }
-a:hover{ text-decoration:underline; }
-
-/* =========================
-   RESPONSIVE
+   Responsive
    ========================= */
 @media (max-width: 900px){
   .grid2, .metrics{ grid-template-columns:1fr; }
