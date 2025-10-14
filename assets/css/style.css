@@ -6,6 +6,7 @@
   --tx:#1F2937;
 }
 
+/* Base */
 *{ box-sizing:border-box; }
 html,body{ margin:0; padding:0; }
 body{
@@ -14,11 +15,10 @@ body{
   background:#fff;
 }
 .container{ max-width:1200px; margin:0 auto; padding:0 20px; }
-
 a{ color:inherit; text-decoration:none; }
 a:hover{ text-decoration:underline; }
 
-/* ===== Header ===== */
+/* Header */
 .site-header{
   position: sticky;
   top: 0;
@@ -35,45 +35,24 @@ a:hover{ text-decoration:underline; }
   padding: 0 24px;
   height: 72px;
 }
-.brand{
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  text-decoration: none;
-}
-.brand-logo{ width: 40px; height: 40px; }
-.brand-text{
-  color: #fff;
-  font-weight: 800;
-  letter-spacing: .3px;
-  white-space: nowrap;
-}
-.menu{
-  display: flex;
-  align-items: center;
-  gap: 28px;
-}
-.menu a{
-  color: #fff;
-  text-decoration: none;
-  font-weight: 600;
-  padding: 10px 0;
-  transition: 0.3s;
-}
-.menu a:hover{ opacity: 0.85; }
+.brand{ display:flex; align-items:center; gap:10px; text-decoration:none; }
+.brand-logo{ width:40px; height:40px; }
+.brand-text{ color:#fff; font-weight:800; letter-spacing:.3px; white-space:nowrap; }
+.menu{ display:flex; align-items:center; gap:28px; }
+.menu a{ color:#fff; font-weight:600; padding:10px 0; transition:.3s; }
+.menu a:hover{ opacity:.85; }
 .btn-cta{
   background: var(--brand-600);
-  color: #fff !important;
-  padding: 10px 18px;
-  border-radius: 10px;
-  text-decoration: none;
-  display: inline-block;
-  font-weight: 700;
-  transition: 0.3s;
+  color:#fff !important;
+  padding:10px 18px;
+  border-radius:10px;
+  display:inline-block;
+  font-weight:700;
+  transition:.3s;
 }
-.btn-cta:hover{ background: #29a945; }
+.btn-cta:hover{ background:#29a945; }
 
-/* ===== Banner fino ===== */
+/* Banner fino */
 .hero-banner{ width:100%; }
 .hero-banner img{
   width:100%;
@@ -85,7 +64,7 @@ a:hover{ text-decoration:underline; }
   box-shadow: 0 6px 24px rgba(0,0,0,.08);
 }
 
-/* ===== Botones / chips ===== */
+/* Botones / chips */
 .btn{
   display:inline-flex;
   align-items:center;
@@ -97,13 +76,9 @@ a:hover{ text-decoration:underline; }
   border-radius:12px;
   font-weight:700;
   text-decoration:none;
-  transition: .25s ease;
+  transition:.25s ease;
 }
-.btn.outline{
-  background:#fff;
-  color:var(--brand);
-  border:2px solid var(--brand);
-}
+.btn.outline{ background:#fff; color:var(--brand); border:2px solid var(--brand); }
 .badge{
   display:inline-block;
   background:rgba(49,194,74,.12);
@@ -113,14 +88,9 @@ a:hover{ text-decoration:underline; }
   font-weight:700;
 }
 
-/* ===== Layouts y tarjetas ===== */
+/* Layouts y tarjetas */
 .section{ padding:64px 0; }
-
-.grid2{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:24px;
-}
+.grid2{ display:grid; grid-template-columns:1fr 1fr; gap:24px; }
 .card{
   background:#fff;
   border:1px solid var(--g100);
@@ -128,11 +98,10 @@ a:hover{ text-decoration:underline; }
   padding:22px;
   box-shadow:0 8px 24px rgba(0,0,0,.06);
 }
-
 h1{ font-size:clamp(32px,4.5vw,48px); margin:12px 0; }
 h2{ font-size:clamp(24px,3vw,36px); margin:0 0 8px; }
 
-/* ===== Hero texto ===== */
+/* Hero texto */
 .hero{
   background:linear-gradient(180deg,#f7fff9,#fff);
   border-bottom:1px solid var(--g100);
@@ -145,18 +114,9 @@ h2{ font-size:clamp(24px,3vw,36px); margin:0 0 8px; }
   padding:60px 0;
 }
 
-/* ===== Métricas y pills ===== */
-.metrics{
-  display:grid;
-  grid-template-columns:repeat(4,1fr);
-  gap:12px;
-}
-.metric{
-  border:1px solid var(--g100);
-  border-radius:14px;
-  padding:12px;
-  text-align:center;
-}
+/* Métricas y pills */
+.metrics{ display:grid; grid-template-columns:repeat(4,1fr); gap:12px; }
+.metric{ border:1px solid var(--g100); border-radius:14px; padding:12px; text-align:center; }
 .pills span{
   display:inline-block;
   background:var(--g50);
@@ -166,83 +126,74 @@ h2{ font-size:clamp(24px,3vw,36px); margin:0 0 8px; }
   font-weight:600;
 }
 
-/* ===== Ajuste de espacio antes del CTA ===== */
-#por-que{ padding-bottom: 28px; } /* reduce el blanco antes de la franja verde */
-
-/* ===== CTA strip (verde) ===== */
+/* CTA strip (franja verde) */
 .cta-strip{
   background: var(--brand);
   color:#fff;
-  padding: 56px 0;
-  margin: 0;                 /* sin márgenes extra */
   text-align:center;
+  padding: 80px 20px;
+  margin: 0;
 }
 .cta-strip h2{
-  margin: 0 0 10px;
+  margin: 0 0 12px;
   font-weight:800;
   letter-spacing:.2px;
+  font-size: clamp(24px, 3.4vw, 40px);
 }
-.cta-strip .cta-sub{
-  margin: 0 auto 22px;
-  max-width: 980px;
-  line-height: 1.7;
+.cta-strip p{
+  margin: 0 auto 28px;
+  max-width: 920px;
+  line-height: 1.6;
   opacity:.98;
+  font-size: clamp(14px, 1.2vw, 18px);
 }
-.cta-actions{
+.cta-buttons{
   display:flex;
   justify-content:center;
   align-items:center;
-  gap:14px;
+  gap:18px;
 }
 
-/* Botón principal blanco */
-.btn-light{
+/* Botón blanco principal (Contactar Ahora) */
+.btn-primary{
   background:#fff;
   color: var(--brand);
-  padding: 12px 22px;
-  border-radius: 12px;
+  padding: 12px 24px;
+  border-radius: 10px;
   font-weight: 800;
   text-decoration:none;
   box-shadow: 0 6px 18px rgba(0,0,0,.12);
   transition: transform .15s ease, box-shadow .15s ease;
 }
-.btn-light:hover{
-  transform: translateY(-1px);
-  box-shadow: 0 10px 24px rgba(0,0,0,.18);
-}
+.btn-primary:hover{ transform: translateY(-2px); box-shadow:0 10px 24px rgba(0,0,0,.18); }
 
-/* Botón secundario contorno blanco con hover invertido */
-.btn-ghost{
+/* Botón borde blanco (Ver Servicios) */
+.btn-secondary{
   background: transparent;
   color:#fff;
   border:2px solid #fff;
-  padding: 10px 20px;
-  border-radius: 12px;
+  padding: 10px 24px;
+  border-radius: 10px;
   font-weight: 700;
   text-decoration:none;
   transition: background .2s ease, color .2s ease, transform .15s ease;
 }
-.btn-ghost:hover{
-  background:#fff;
-  color: var(--brand);
-  transform: translateY(-1px);
-}
+.btn-secondary:hover{ background:#fff; color:var(--brand); transform: translateY(-2px); }
 
-/* ===== Footer ===== */
-footer{
-  background:#0D1B1A;
-  color:#d6e5db;
-}
+/* Footer */
+footer{ background:#0D1B1A; color:#d6e5db; padding:50px 0 20px; margin:0; }
 footer a{ color:#d6e5db; }
 footer a:hover{ text-decoration:underline; }
-.top{ background:var(--brand); }
-.foot{
-  display:grid;
-  grid-template-columns:2fr 1fr 1fr 1.2fr;
-  gap:20px;
+.foot{ display:grid; grid-template-columns:2fr 1fr 1fr 1.2fr; gap:20px; }
+.bottom-bar{
+  border-top:1px solid rgba(255,255,255,.12);
+  margin-top:20px;
+  padding-top:12px;
+  display:flex;
+  justify-content:space-between;
 }
 
-/* ===== WhatsApp flotante ===== */
+/* WhatsApp flotante */
 .whatsapp{
   position:fixed;
   right:16px;
@@ -256,13 +207,13 @@ footer a:hover{ text-decoration:underline; }
   text-decoration:none;
 }
 
-/* ===== Responsive ===== */
+/* Responsive */
 @media (max-width: 900px){
   .grid2, .metrics{ grid-template-columns:1fr; }
   .hero .grid{ grid-template-columns:1fr; }
   .site-header .container.nav{ flex-wrap:wrap; }
   .menu{ gap:16px; flex-wrap:wrap; }
   .hero-banner img{ height: clamp(120px, 36vw, 200px); }
-  .cta-strip{ padding: 42px 0; }
-  .cta-actions{ gap:10px; flex-wrap:wrap; }
+  .cta-strip{ padding: 56px 16px; }
+  .cta-buttons{ gap:12px; flex-wrap:wrap; }
 }
