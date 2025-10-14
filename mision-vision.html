@@ -3,13 +3,11 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-
-  <!-- IMPORTANTE para GitHub Pages (rutas correctas) -->
-  <base href="/cofisagro/">
+  <base href="/cofisagro.com/">
 
   <title>Misión & Visión — COFISAGRO S.R.L.</title>
-  <link rel="icon" href="assets/img/favicon.png" />
-  <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="icon" type="image/png" href="assets/img/favicon.png" />
+  <link rel="stylesheet" href="assets/css/style.css?v=1" />
 </head>
 <body>
   <!-- ===== HEADER (igual que en la home) ===== -->
@@ -23,7 +21,7 @@
         <a href="index.html">Inicio</a>
         <a href="nosotros.html">Nosotros</a>
         <a href="mision-vision.html">Misión & Visión</a>
-        <a href="areas-negocio.html">Áreas de Negocio</a>
+        <a href="areas.html">Áreas de Negocio</a>
         <a class="btn-cta" href="contacto.html">Contacto</a>
       </nav>
     </div>
@@ -151,7 +149,7 @@
     </div>
   </section>
 
-  <!-- ===== FOOTER (sin "Volver arriba" y sin botón WhatsApp) ===== -->
+  <!-- ===== FOOTER (sin “Volver arriba”, sin WhatsApp) ===== -->
   <footer>
     <div class="container foot">
       <div>
@@ -163,7 +161,7 @@
         <div><a href="index.html">Inicio</a></div>
         <div><a href="nosotros.html">Nosotros</a></div>
         <div><a href="mision-vision.html">Misión & Visión</a></div>
-        <div><a href="areas-negocio.html">Áreas de Negocio</a></div>
+        <div><a href="areas.html">Áreas de Negocio</a></div>
         <div><a href="contacto.html">Contacto</a></div>
       </div>
       <div>
@@ -185,7 +183,6 @@
     </div>
   </footer>
 
-  <!-- ===== JS ===== -->
   <script>
     // Año en footer y elemento activo del menú
     const y = document.getElementById('y'); if (y) y.textContent = new Date().getFullYear();
