@@ -2,97 +2,116 @@
 <html lang="es">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Misión y Visión - COFISAGRO S.R.L.</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Fija la carpeta base para rutas en GitHub Pages -->
+  <base href="/cofisagro/">
+
+  <title>Misión y Visión — COFISAGRO S.R.L.</title>
   <link rel="icon" href="assets/img/favicon.png">
   <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
-  <!-- ======= Header ======= -->
-  <header class="header">
-    <div class="container">
-      <div class="logo">
-        <a href="index.html"><img src="assets/img/logo.png" alt="COFISAGRO Logo"></a>
-        <h1>COFISAGRO S.R.L.</h1>
-      </div>
-      <nav class="nav">
-        <ul>
-          <li><a href="index.html">Inicio</a></li>
-          <li><a href="nosotros.html">Nosotros</a></li>
-          <li><a href="mision-vision.html" class="active">Misión & Visión</a></li>
-          <li><a href="areas-negocio.html">Áreas de Negocio</a></li>
-          <li><a href="contacto.html" class="btn-contacto">Contacto</a></li>
-        </ul>
+  <!-- ===== HEADER (usa clases del CSS actual) ===== -->
+  <header class="site-header">
+    <div class="container nav">
+      <a class="brand" href="index.html">
+        <img class="brand-logo" src="assets/img/logo.png" alt="COFISAGRO">
+        <span class="brand-text">COFISAGRO S.R.L.</span>
+      </a>
+      <nav class="menu">
+        <a href="index.html">Inicio</a>
+        <a href="nosotros.html">Nosotros</a>
+        <a href="mision-vision.html">Misión & Visión</a>
+        <a href="areas-negocio.html">Áreas de Negocio</a>
+        <a class="btn-cta" href="contacto.html">Contacto</a>
       </nav>
     </div>
   </header>
-  <!-- ======= Fin Header ======= -->
 
-  <!-- ======= Contenido principal ======= -->
-  <main class="page-content">
-    <section class="hero-interno">
+  <!-- ===== BANNER (opcional, corto como en el diseño) ===== -->
+  <div class="hero-banner">
+    <img src="assets/img/inicio-banner.jpg" alt="COFISAGRO">
+  </div>
+
+  <!-- ===== CONTENIDO ===== -->
+  <main>
+    <section class="section">
       <div class="container">
-        <h1 class="titulo-pagina">Misión y Visión</h1>
-        <p class="subtitulo">Conoce nuestros principios y propósito</p>
+        <h1>Misión y Visión</h1>
+
+        <div class="grid2">
+          <article class="card">
+            <h2>Misión</h2>
+            <p>
+              Brindar productos de calidad y soluciones eficientes en los sectores agrícola y farmacéutico,
+              garantizando confianza, cumplimiento y satisfacción a nuestros clientes.
+            </p>
+          </article>
+
+          <article class="card">
+            <h2>Visión</h2>
+            <p>
+              Ser reconocidos como una empresa de confianza en distribución y comercialización de productos
+              agroquímicos y farmacéuticos en Bolivia, destacada por su compromiso con la calidad y la
+              sostenibilidad.
+            </p>
+          </article>
+        </div>
       </div>
     </section>
 
-    <section class="contenido texto-general">
-      <div class="container">
-        <h2>Misión</h2>
-        <p>
-          Brindar productos de calidad y soluciones eficientes en los sectores agrícola y farmacéutico,
-          garantizando confianza, cumplimiento y satisfacción a nuestros clientes.
-        </p>
-
-        <h2>Visión</h2>
-        <p>
-          Ser reconocidos como una empresa de confianza en distribución y comercialización de productos
-          agroquímicos y farmacéuticos en Bolivia, destacada por su compromiso con la calidad y la sostenibilidad.
-        </p>
+    <!-- ===== FRANJA CTA (igual estilo que home, opcional) ===== -->
+    <section class="cta-strip">
+      <h2>¿Listo para trabajar con nosotros?</h2>
+      <p>Contáctanos para asesorarte con soluciones confiables y eficientes.</p>
+      <div class="cta-buttons">
+        <a class="btn-primary" href="contacto.html">Contactar Ahora</a>
+        <a class="btn-secondary" href="servicios.html">Ver Servicios</a>
       </div>
     </section>
   </main>
-  <!-- ======= Fin Contenido ======= -->
 
-  <!-- ======= Footer ======= -->
-  <footer class="footer">
-    <div class="container footer-columns">
-      <div class="footer-col">
+  <!-- ===== FOOTER (usa la estructura del CSS actual) ===== -->
+  <footer>
+    <div class="container foot">
+      <div>
         <h4>Información general</h4>
-        <p>COFISAGRO S.R.L. — Distribución de productos agroquímicos y farmacéuticos en Bolivia.</p>
+        <p>COFISAGRO S.R.L. — Calidad y Confianza</p>
       </div>
-      <div class="footer-col">
+      <div>
         <h4>Navegación</h4>
-        <ul>
-          <li><a href="index.html">Inicio</a></li>
-          <li><a href="nosotros.html">Nosotros</a></li>
-          <li><a href="mision-vision.html">Misión & Visión</a></li>
-          <li><a href="areas-negocio.html">Áreas de Negocio</a></li>
-        </ul>
+        <div><a href="index.html">Inicio</a></div>
+        <div><a href="nosotros.html">Nosotros</a></div>
+        <div><a href="mision-vision.html">Misión & Visión</a></div>
+        <div><a href="areas-negocio.html">Áreas de Negocio</a></div>
       </div>
-      <div class="footer-col">
+      <div>
         <h4>Sectores</h4>
-        <ul>
-          <li>Agroquímicos</li>
-          <li>Farmacéuticos</li>
-        </ul>
+        <div><a href="agroquimicos.html">Agroquímicos</a></div>
+        <div><a href="farmaceuticos.html">Farmacéuticos</a></div>
       </div>
-      <div class="footer-col">
+      <div>
         <h4>Contacto</h4>
-        <ul>
-          <li>Email: contacto@cofisagro.com</li>
-          <li>Tel: +591 3 1234567</li>
-        </ul>
+        <div><a href="mailto:info@cofisagro.com">info@cofisagro.com</a></div>
+        <div><a href="tel:+59170000000">+591 700 00000</a></div>
       </div>
     </div>
-    <div class="footer-bottom">
-      <p>© 2025 COFISAGRO S.R.L. — Todos los derechos reservados.</p>
+    <div class="container bottom-bar">
+      <small>© <span id="y"></span> COFISAGRO S.R.L.</small>
+      <small>Todos los derechos reservados</small>
     </div>
   </footer>
-  <!-- ======= Fin Footer ======= -->
 
-  <!-- ======= JS opcional ======= -->
+  <!-- ===== JS opcional ===== -->
+  <script>
+    // Año en footer
+    const y = document.getElementById('y'); if (y) y.textContent = new Date().getFullYear();
+    // Marca activo en el menú
+    const path = location.pathname.split('/').pop() || 'index.html';
+    document.querySelectorAll('nav.menu a').forEach(a => {
+      if (a.getAttribute('href') === path) a.style.opacity = '.85';
+    });
+  </script>
   <script src="assets/js/main.js"></script>
 </body>
 </html>
