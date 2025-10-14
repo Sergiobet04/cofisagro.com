@@ -52,7 +52,7 @@ a:hover{ text-decoration:underline; }
 }
 .btn-cta:hover{ background:#29a945; }
 
-/* ===== HERO BANNER ===== */
+/* ===== HERO BANNER (home o interno corto con imagen) ===== */
 .hero-banner{ width:100%; }
 .hero-banner img{
   width:100%;
@@ -101,7 +101,7 @@ a:hover{ text-decoration:underline; }
 h1{ font-size:clamp(32px,4.5vw,48px); margin:12px 0; }
 h2{ font-size:clamp(24px,3vw,36px); margin:0 0 8px; }
 
-/* ===== HERO PRINCIPAL ===== */
+/* ===== HERO PRINCIPAL (home) ===== */
 .hero{
   background:linear-gradient(180deg,#f7fff9,#fff);
   border-bottom:1px solid var(--g100);
@@ -114,7 +114,7 @@ h2{ font-size:clamp(24px,3vw,36px); margin:0 0 8px; }
   padding:60px 0;
 }
 
-/* ===== MÉTRICAS ===== */
+/* ===== MÉTRICAS (home) ===== */
 .metrics{ display:grid; grid-template-columns:repeat(4,1fr); gap:12px; }
 .metric{ border:1px solid var(--g100); border-radius:14px; padding:12px; text-align:center; }
 .pills span{
@@ -133,6 +133,10 @@ h2{ font-size:clamp(24px,3vw,36px); margin:0 0 8px; }
   text-align:center;
   padding: 80px 20px;
   margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 .cta-strip h2{
   margin: 0 0 14px;
@@ -152,7 +156,6 @@ h2{ font-size:clamp(24px,3vw,36px); margin:0 0 8px; }
   align-items:center;
   gap:18px;
 }
-
 /* Botón blanco (Contactar Ahora) */
 .btn-primary{
   background:#fff;
@@ -168,7 +171,6 @@ h2{ font-size:clamp(24px,3vw,36px); margin:0 0 8px; }
   transform: translateY(-2px);
   box-shadow: 0 10px 24px rgba(0,0,0,.18);
 }
-
 /* Botón borde blanco (Ver Servicios) */
 .btn-secondary{
   background: transparent;
@@ -204,22 +206,168 @@ footer a:hover{ text-decoration:underline; }
   justify-content:space-between;
   align-items:center;
 }
-
-/* ===== WHATSAPP ===== */
-.whatsapp{
-  position:fixed;
-  right:16px;
-  bottom:16px;
-  background:var(--brand);
-  color:#fff;
-  border-radius:999px;
-  padding:12px 16px;
-  font-weight:700;
-  box-shadow:0 8px 24px rgba(0,0,0,.2);
-  text-decoration:none;
+/* Subtítulos del footer en verde */
+footer h4 {
+  color: var(--brand-600);
+  margin-bottom: 10px;
+  font-weight: 700;
+  font-size: 1rem;
+}
+/* Refuerzo de contraste en textos del footer */
+footer small,
+footer div,
+footer a {
+  color: #d6e5db;
 }
 
+/* ====== HERO INTERNO (Misión & Visión) ====== */
+.page-hero-soft{
+  background: linear-gradient(180deg, #f1fff6 0%, rgba(241,255,246,0.45) 70%, #fff 100%);
+  padding: 54px 0 38px;
+  text-align: center;
+  border-bottom: 1px solid var(--g100);
+}
+.pill.soft{
+  display:inline-flex; align-items:center; gap:10px;
+  background: rgba(49,194,74,.16);
+  color: var(--brand);
+  padding: 10px 16px;
+  border-radius: 999px;
+  font-weight: 800;
+}
+.title-xl{
+  font-size: clamp(34px, 6vw, 62px);
+  margin: 16px 0 10px;
+  font-weight: 900;
+  letter-spacing: .2px;
+}
+.title-lg{
+  font-size: clamp(28px, 4.2vw, 40px);
+  margin: 8px 0 14px;
+  font-weight: 900;
+}
+.lead{
+  max-width: 980px;
+  margin: 0 auto;
+  font-size: clamp(16px, 2vw, 22px);
+  line-height: 1.6;
+  opacity: .88;
+}
+.accent{ color: var(--brand-600); }
+
+/* ====== LAYOUT DOS COLUMNAS (secciones internas) ====== */
+.split{
+  display: grid;
+  grid-template-columns: 1.2fr .8fr;
+  gap: 28px;
+  align-items: start;
+}
+.split.reverse{ grid-template-columns: .8fr 1.2fr; }
+.split .col{ display:block; }
+
+/* ====== EYEBROW (icono cuadrado suave) ====== */
+.eyebrow-wrap{ display:flex; align-items:center; gap:14px; margin-bottom:6px; }
+.eyebrow-ico{
+  width:54px; height:54px; border-radius:16px;
+  background: rgba(49,194,74,.14);
+  display:grid; place-items:center; font-size:26px; color:var(--brand);
+}
+.eyebrow-ico.blue{
+  background: rgba(63,131,248,.14); color:#2a5bd7;
+}
+
+/* ====== QUOTES ====== */
+.quote{
+  background: #f2fff6;
+  border-left: 6px solid var(--brand);
+  padding: 18px 18px 18px 20px;
+  border-radius: 12px;
+  margin: 14px 0 22px;
+  line-height: 1.7;
+  font-size: clamp(16px, 1.6vw, 20px);
+  box-shadow: 0 4px 14px rgba(0,0,0,.04);
+}
+.quote.green{ background: #eefdf3; }
+
+/* ====== SUBTÍTULOS ====== */
+.subtitle{
+  font-size: clamp(18px, 2.2vw, 22px);
+  margin: 18px 0 10px;
+  font-weight: 800;
+}
+
+/* ====== LISTA CON CHECKS (DOS COLUMNAS) ====== */
+.bullets{
+  list-style: none; padding:0; margin:0;
+  display:grid; gap: 12px;
+}
+.bullets.two-col{
+  grid-template-columns: repeat(2, minmax(220px, 1fr));
+  column-gap: 28px;
+}
+.bullets li{ position:relative; padding-left:34px; line-height:1.6; }
+.bullets li i{
+  position:absolute; left:0; top:.25em;
+  width:22px; height:22px; border-radius:8px;
+  background: rgba(49,194,74,.14);
+  border:1px solid rgba(49,194,74,.35);
+}
+.bullets li i::after{
+  content:"✓"; display:block; text-align:center; font-weight:900;
+  transform: translateY(-1px);
+  color: var(--brand);
+}
+
+/* ====== FEATURE CARDS SUAVES ====== */
+.feature-card{
+  background: #F6FAFF;
+  border: 2px solid rgba(63,131,248,.25);
+  border-radius: 18px;
+  padding: 36px 28px;
+  text-align: center;
+  box-shadow: 0 10px 26px rgba(0,0,0,.06);
+}
+.feature-card.soft-green{
+  background: #EFFFF4;
+  border-color: rgba(49,194,74,.35);
+}
+.feature-card.soft-blue{
+  background: #EAF2FF;
+  border-color: rgba(63,131,248,.35);
+}
+.feature-emoji{ font-size: 64px; margin-bottom: 10px; }
+.feature-title{ font-size: clamp(22px, 2.6vw, 30px); margin: 6px 0 6px; color: var(--brand); font-weight: 900; }
+.feature-title.blue{ color:#2a5bd7; }
+.feature-text{ font-size: 18px; opacity:.85; }
+
+/* ====== GOALS (tarjetas) ====== */
+.goals{
+  display:grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 18px;
+  margin-top: 12px;
+}
+.goal{
+  background:#fff;
+  border:1px solid var(--g100);
+  border-radius:16px;
+  padding:18px 20px;
+  box-shadow:0 12px 28px rgba(0,0,0,.06);
+}
+.goal-ico{
+  width:48px; height:48px; border-radius:14px;
+  display:grid; place-items:center; font-size:24px;
+  background: rgba(49,194,74,.14);
+  color: var(--brand);
+  margin-bottom:10px;
+}
+.goal h4{ margin:8px 0 6px; font-size:20px; }
+
 /* ===== RESPONSIVE ===== */
+@media (max-width: 1000px){
+  .split, .split.reverse{ grid-template-columns: 1fr; }
+  .goals{ grid-template-columns:1fr; }
+}
 @media (max-width: 900px){
   .grid2, .metrics{ grid-template-columns:1fr; }
   .hero .grid{ grid-template-columns:1fr; }
@@ -228,33 +376,4 @@ footer a:hover{ text-decoration:underline; }
   .hero-banner img{ height: clamp(120px, 36vw, 200px); }
   .cta-strip{ padding: 56px 16px; }
   .cta-buttons{ gap:12px; flex-wrap:wrap; }
-}
-.cta-strip {
-  text-align: center !important;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-
-.cta-strip h2,
-.cta-strip p {
-  width: 100%;
-  text-align: center !important;
-  margin-left: auto;
-  margin-right: auto;
-}
-/* === Restaurar color verde en subtítulos del footer === */
-footer h4 {
-  color: var(--brand-600);
-  margin-bottom: 10px;
-  font-weight: 700;
-  font-size: 1rem;
-}
-
-/* Opcional: para reforzar contraste del texto general del footer */
-footer small,
-footer div,
-footer a {
-  color: #d6e5db;
 }
