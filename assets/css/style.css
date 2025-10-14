@@ -1,4 +1,4 @@
-:root{
+:root {
   --brand:#0E8B3D;
   --brand-600:#31C24A;
   --g50:#F6FAF7;
@@ -6,7 +6,7 @@
   --tx:#1F2937;
 }
 
-/* Base */
+/* ===== RESET ===== */
 *{ box-sizing:border-box; }
 html,body{ margin:0; padding:0; }
 body{
@@ -18,7 +18,7 @@ body{
 a{ color:inherit; text-decoration:none; }
 a:hover{ text-decoration:underline; }
 
-/* Header */
+/* ===== HEADER ===== */
 .site-header{
   position: sticky;
   top: 0;
@@ -52,7 +52,7 @@ a:hover{ text-decoration:underline; }
 }
 .btn-cta:hover{ background:#29a945; }
 
-/* Banner fino */
+/* ===== HERO BANNER ===== */
 .hero-banner{ width:100%; }
 .hero-banner img{
   width:100%;
@@ -64,7 +64,7 @@ a:hover{ text-decoration:underline; }
   box-shadow: 0 6px 24px rgba(0,0,0,.08);
 }
 
-/* Botones / chips */
+/* ===== BOTONES ===== */
 .btn{
   display:inline-flex;
   align-items:center;
@@ -88,7 +88,7 @@ a:hover{ text-decoration:underline; }
   font-weight:700;
 }
 
-/* Layouts y tarjetas */
+/* ===== LAYOUT ===== */
 .section{ padding:64px 0; }
 .grid2{ display:grid; grid-template-columns:1fr 1fr; gap:24px; }
 .card{
@@ -101,7 +101,7 @@ a:hover{ text-decoration:underline; }
 h1{ font-size:clamp(32px,4.5vw,48px); margin:12px 0; }
 h2{ font-size:clamp(24px,3vw,36px); margin:0 0 8px; }
 
-/* Hero texto */
+/* ===== HERO PRINCIPAL ===== */
 .hero{
   background:linear-gradient(180deg,#f7fff9,#fff);
   border-bottom:1px solid var(--g100);
@@ -114,7 +114,7 @@ h2{ font-size:clamp(24px,3vw,36px); margin:0 0 8px; }
   padding:60px 0;
 }
 
-/* Métricas y pills */
+/* ===== MÉTRICAS ===== */
 .metrics{ display:grid; grid-template-columns:repeat(4,1fr); gap:12px; }
 .metric{ border:1px solid var(--g100); border-radius:14px; padding:12px; text-align:center; }
 .pills span{
@@ -126,7 +126,7 @@ h2{ font-size:clamp(24px,3vw,36px); margin:0 0 8px; }
   font-weight:600;
 }
 
-/* CTA strip (franja verde) */
+/* ===== CTA STRIP (franja verde) ===== */
 .cta-strip{
   background: var(--brand);
   color:#fff;
@@ -135,17 +135,16 @@ h2{ font-size:clamp(24px,3vw,36px); margin:0 0 8px; }
   margin: 0;
 }
 .cta-strip h2{
-  margin: 0 0 12px;
+  margin: 0 0 14px;
   font-weight:800;
-  letter-spacing:.2px;
-  font-size: clamp(24px, 3.4vw, 40px);
+  font-size: clamp(26px,3.5vw,40px);
 }
 .cta-strip p{
-  margin: 0 auto 28px;
-  max-width: 920px;
+  max-width: 900px;
+  margin: 0 auto 30px;
   line-height: 1.6;
-  opacity:.98;
-  font-size: clamp(14px, 1.2vw, 18px);
+  font-size: clamp(15px,1.2vw,18px);
+  opacity: .98;
 }
 .cta-buttons{
   display:flex;
@@ -154,7 +153,7 @@ h2{ font-size:clamp(24px,3vw,36px); margin:0 0 8px; }
   gap:18px;
 }
 
-/* Botón blanco principal (Contactar Ahora) */
+/* Botón blanco (Contactar Ahora) */
 .btn-primary{
   background:#fff;
   color: var(--brand);
@@ -165,7 +164,10 @@ h2{ font-size:clamp(24px,3vw,36px); margin:0 0 8px; }
   box-shadow: 0 6px 18px rgba(0,0,0,.12);
   transition: transform .15s ease, box-shadow .15s ease;
 }
-.btn-primary:hover{ transform: translateY(-2px); box-shadow:0 10px 24px rgba(0,0,0,.18); }
+.btn-primary:hover{
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px rgba(0,0,0,.18);
+}
 
 /* Botón borde blanco (Ver Servicios) */
 .btn-secondary{
@@ -178,10 +180,19 @@ h2{ font-size:clamp(24px,3vw,36px); margin:0 0 8px; }
   text-decoration:none;
   transition: background .2s ease, color .2s ease, transform .15s ease;
 }
-.btn-secondary:hover{ background:#fff; color:var(--brand); transform: translateY(-2px); }
+.btn-secondary:hover{
+  background:#fff;
+  color: var(--brand);
+  transform: translateY(-2px);
+}
 
-/* Footer */
-footer{ background:#0D1B1A; color:#d6e5db; padding:50px 0 20px; margin:0; }
+/* ===== FOOTER ===== */
+footer{
+  background:#0D1B1A;
+  color:#d6e5db;
+  padding:50px 0 20px;
+  margin:0;
+}
 footer a{ color:#d6e5db; }
 footer a:hover{ text-decoration:underline; }
 .foot{ display:grid; grid-template-columns:2fr 1fr 1fr 1.2fr; gap:20px; }
@@ -191,9 +202,10 @@ footer a:hover{ text-decoration:underline; }
   padding-top:12px;
   display:flex;
   justify-content:space-between;
+  align-items:center;
 }
 
-/* WhatsApp flotante */
+/* ===== WHATSAPP ===== */
 .whatsapp{
   position:fixed;
   right:16px;
@@ -207,7 +219,7 @@ footer a:hover{ text-decoration:underline; }
   text-decoration:none;
 }
 
-/* Responsive */
+/* ===== RESPONSIVE ===== */
 @media (max-width: 900px){
   .grid2, .metrics{ grid-template-columns:1fr; }
   .hero .grid{ grid-template-columns:1fr; }
