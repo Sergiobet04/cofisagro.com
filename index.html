@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>COFISAGRO S.R.L. — Calidad y Confianza</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/style.css?v=6">
   <link rel="icon" href="assets/img/favicon.png">
 </head>
 <body>
@@ -129,27 +129,21 @@
     </div>
   </section>
 
-  <!-- WhatsApp -->
-  <a class="whatsapp" href="https://wa.me/59167781113?text=Hola%20COFISAGRO%2C%20quisiera%20informaci%C3%B3n" target="_blank" rel="noopener">WhatsApp</a>
+  <!-- CTA -->
+  <section class="cta-strip">
+    <div class="container">
+      <h2>¿Listo para trabajar con nosotros?</h2>
+      <p>Contáctanos hoy mismo y descubre cómo podemos ayudarte con soluciones de calidad en productos agroquímicos y farmacéuticos.</p>
+      <div class="cta-buttons">
+        <a class="btn-primary" href="contacto.html">Contactar Ahora</a>
+        <a class="btn-secondary" href="areas.html">Ver Servicios</a>
+      </div>
+    </div>
+  </section>
 
   <!-- FOOTER -->
   <footer>
-    <!-- Franja verde con CTA -->
-    <div class="cta-footer">
-      <div class="container">
-        <h2>¿Listo para trabajar con nosotros?</h2>
-        <p class="cta-sub">
-          Contáctanos hoy mismo y descubre cómo podemos ayudarte con soluciones de calidad en productos agroquímicos y farmacéuticos.
-        </p>
-        <div class="cta-actions">
-          <a class="btn btn-light" href="contacto.html">Contactar Ahora</a>
-          <a class="btn btn-ghost" href="areas.html">Ver Servicios</a>
-        </div>
-      </div>
-    </div>
-
-    <!-- Sección inferior del footer -->
-    <div class="container" style="padding:24px 0">
+    <div class="container">
       <div class="foot">
         <div>
           <div style="display:flex;gap:10px;align-items:center;margin-bottom:8px">
@@ -184,15 +178,19 @@
         </div>
       </div>
 
-      <div style="border-top:1px solid rgba(255,255,255,.12);margin-top:16px;padding-top:12px;display:flex;justify-content:space-between">
+      <div class="bottom-bar">
         <small>© <span id="year"></span> COFISAGRO S.R.L.</small>
         <a href="#inicio">Volver arriba ↑</a>
       </div>
     </div>
   </footer>
 
+  <!-- WhatsApp -->
+  <a class="whatsapp" href="https://wa.me/59167781113?text=Hola%20COFISAGRO%2C%20quisiera%20informaci%C3%B3n" target="_blank" rel="noopener">WhatsApp</a>
+
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
   </script>
+
 </body>
 </html>
