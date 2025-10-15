@@ -4,12 +4,13 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <!-- Tu sitio vive en /cofisagro.com/ -->
+  <!-- El sitio vive en /cofisagro.com/ -->
   <base href="/cofisagro.com/">
 
   <title>Misión & Visión — COFISAGRO S.R.L.</title>
   <link rel="icon" type="image/png" href="assets/img/favicon.png" />
-  <link rel="stylesheet" href="assets/css/style.css?v=16" />
+  <!-- Asegúrate de que esta versión sea >= a la que tienes en cache -->
+  <link rel="stylesheet" href="assets/css/style.css?v=14" />
 </head>
 <body>
   <!-- ===== HEADER ===== -->
@@ -108,16 +109,19 @@
             <h4>Excelencia en Distribución</h4>
             <p>Ser reconocidos por nuestra excelencia en distribución de productos agroquímicos y farmacéuticos en Bolivia.</p>
           </div>
+
           <div class="goal">
             <div class="goal-ico">✅</div>
             <h4>Excelencia Operativa</h4>
             <p>Mantener los más altos estándares de calidad en todos nuestros procesos y servicios.</p>
           </div>
+
           <div class="goal">
             <div class="goal-ico">🎯</div>
             <h4>Mejora Continua</h4>
             <p>Optimizar constantemente nuestros procesos para ofrecer la mejor atención a nuestros clientes.</p>
           </div>
+
           <div class="goal">
             <div class="goal-ico">👁️</div>
             <h4>Sostenibilidad</h4>
@@ -128,14 +132,11 @@
     </div>
   </section>
 
-  <!-- ===== FRANJA CTA (texto y enlaces actualizados) ===== -->
+  <!-- ===== FRANJA CTA (ACTUALIZADA) ===== -->
   <section class="cta-strip">
     <div class="container">
       <h2>Trabajemos Juntos por un Futuro Mejor</h2>
-      <p>
-        En COFISAGRO S.R.L. creemos que el éxito se construye con alianzas sólidas y trabajo conjunto.
-        Únete a nosotros en esta misión de excelencia.
-      </p>
+      <p>En COFISAGRO S.R.L. creemos que el éxito se construye con alianzas sólidas y trabajo conjunto. Únete a nosotros en esta misión de excelencia.</p>
       <div class="cta-buttons">
         <a class="btn-primary" href="nosotros.html">Conoce Más Sobre Nosotros</a>
         <a class="btn-secondary" href="areas.html">Nuestros Servicios</a>
@@ -181,6 +182,13 @@
   </footer>
 
   <script>
-    // Año en footer y resaltar item activo del menú
+    // Año en footer y resaltar el item activo del menú
     const y = document.getElementById('y'); if (y) y.textContent = new Date().getFullYear();
-    const path = location.pathname.split('/').
+    const path = location.pathname.split('/').pop() || 'index.html';
+    document.querySelectorAll('nav.menu a').forEach(a => {
+      if (a.getAttribute('href') === path) a.style.opacity = '.85';
+    });
+  </script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
