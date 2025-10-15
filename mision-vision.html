@@ -9,8 +9,7 @@
 
   <title>Misión & Visión — COFISAGRO S.R.L.</title>
   <link rel="icon" type="image/png" href="assets/img/favicon.png" />
-  <!-- 👇 subimos versión para evitar caché -->
-  <link rel="stylesheet" href="assets/css/style.css?v=15" />
+  <link rel="stylesheet" href="assets/css/style.css?v=16" />
 </head>
 <body>
   <!-- ===== HEADER ===== -->
@@ -129,13 +128,18 @@
     </div>
   </section>
 
-  <!-- ===== FRANJA CTA ===== -->
+  <!-- ===== FRANJA CTA (texto y enlaces actualizados) ===== -->
   <section class="cta-strip">
-    <h2>¿Listo para trabajar con nosotros?</h2>
-    <p>Contáctanos para asesorarte con soluciones confiables y eficientes.</p>
-    <div class="cta-buttons">
-      <a class="btn-primary" href="contacto.html">Contactar Ahora</a>
-      <a class="btn-secondary" href="servicios.html">Ver Servicios</a>
+    <div class="container">
+      <h2>Trabajemos Juntos por un Futuro Mejor</h2>
+      <p>
+        En COFISAGRO S.R.L. creemos que el éxito se construye con alianzas sólidas y trabajo conjunto.
+        Únete a nosotros en esta misión de excelencia.
+      </p>
+      <div class="cta-buttons">
+        <a class="btn-primary" href="nosotros.html">Conoce Más Sobre Nosotros</a>
+        <a class="btn-secondary" href="areas.html">Nuestros Servicios</a>
+      </div>
     </div>
   </section>
 
@@ -179,11 +183,4 @@
   <script>
     // Año en footer y resaltar item activo del menú
     const y = document.getElementById('y'); if (y) y.textContent = new Date().getFullYear();
-    const path = location.pathname.split('/').pop() || 'index.html';
-    document.querySelectorAll('nav.menu a').forEach(a => {
-      if (a.getAttribute('href') === path) a.style.opacity = '.85';
-    });
-  </script>
-  <script src="assets/js/main.js"></script>
-</body>
-</html>
+    const path = location.pathname.split('/').
