@@ -3,14 +3,16 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- Tu sitio vive en /cofisagro.com/ -->
   <base href="/cofisagro.com/">
 
   <title>Misión & Visión — COFISAGRO S.R.L.</title>
   <link rel="icon" type="image/png" href="assets/img/favicon.png" />
-  <link rel="stylesheet" href="assets/css/style.css?v=1" />
+  <link rel="stylesheet" href="assets/css/style.css?v=12" />
 </head>
 <body>
-  <!-- ===== HEADER (igual que en la home) ===== -->
+  <!-- ===== HEADER ===== -->
   <header class="site-header">
     <div class="container nav">
       <a class="brand" href="index.html">
@@ -44,13 +46,10 @@
   <!-- ===== MISIÓN ===== -->
   <section class="section">
     <div class="container split">
-      <!-- Columna izquierda -->
       <div class="col">
         <div class="eyebrow-wrap">
           <div class="eyebrow-ico">🎯</div>
-          <h2 class="title-lg">
-            Nuestra <span class="accent">Misión</span>
-          </h2>
+          <h2 class="title-lg">Nuestra <span class="accent">Misión</span></h2>
         </div>
 
         <blockquote class="quote green">
@@ -59,7 +58,6 @@
         </blockquote>
 
         <h3 class="subtitle">Nuestros Compromisos:</h3>
-
         <ul class="bullets two-col">
           <li><i></i>Productos de calidad certificada y garantizada</li>
           <li><i></i>Atención personalizada y profesional</li>
@@ -70,7 +68,6 @@
         </ul>
       </div>
 
-      <!-- Columna derecha (tarjeta suave) -->
       <aside class="feature-card soft-green">
         <div class="feature-emoji">🎯</div>
         <h3 class="feature-title">Nuestra Misión</h3>
@@ -84,7 +81,6 @@
   <!-- ===== VISIÓN ===== -->
   <section class="section">
     <div class="container split reverse">
-      <!-- Izquierda: tarjeta azul suave -->
       <aside class="feature-card soft-blue">
         <div class="feature-emoji">🏢</div>
         <h3 class="feature-title blue">Nuestra Visión</h3>
@@ -93,13 +89,10 @@
         </p>
       </aside>
 
-      <!-- Derecha: título + quote + objetivos -->
       <div class="col">
         <div class="eyebrow-wrap">
           <div class="eyebrow-ico blue">⭐</div>
-          <h2 class="title-lg">
-            Nuestra <span class="accent">Visión</span>
-          </h2>
+          <h2 class="title-lg">Nuestra <span class="accent">Visión</span></h2>
         </div>
 
         <blockquote class="quote green">
@@ -109,26 +102,22 @@
         </blockquote>
 
         <h3 class="subtitle">Objetivos Estratégicos:</h3>
-
         <div class="goals">
           <div class="goal">
             <div class="goal-ico">⭐</div>
             <h4>Excelencia en Distribución</h4>
             <p>Ser reconocidos por nuestra excelencia en distribución de productos agroquímicos y farmacéuticos en Bolivia.</p>
           </div>
-
           <div class="goal">
             <div class="goal-ico">✅</div>
             <h4>Excelencia Operativa</h4>
             <p>Mantener los más altos estándares de calidad en todos nuestros procesos y servicios.</p>
           </div>
-
           <div class="goal">
             <div class="goal-ico">🎯</div>
             <h4>Mejora Continua</h4>
             <p>Optimizar constantemente nuestros procesos para ofrecer la mejor atención a nuestros clientes.</p>
           </div>
-
           <div class="goal">
             <div class="goal-ico">👁️</div>
             <h4>Sostenibilidad</h4>
@@ -149,7 +138,7 @@
     </div>
   </section>
 
-  <!-- ===== FOOTER (sin “Volver arriba”, sin WhatsApp) ===== -->
+  <!-- ===== FOOTER ===== -->
   <footer>
     <div class="container foot">
       <div>
@@ -184,7 +173,7 @@
   </footer>
 
   <script>
-    // Año en footer y elemento activo del menú
+    // Año en footer y resaltar item activo del menú
     const y = document.getElementById('y'); if (y) y.textContent = new Date().getFullYear();
     const path = location.pathname.split('/').pop() || 'index.html';
     document.querySelectorAll('nav.menu a').forEach(a => {
