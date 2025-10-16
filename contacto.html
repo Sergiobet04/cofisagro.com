@@ -9,69 +9,74 @@
 
   <title>Contacto — COFISAGRO S.R.L.</title>
   <link rel="icon" type="image/png" href="assets/img/favicon.png" />
-  <!-- Fuerza recarga del CSS global -->
-  <link rel="stylesheet" href="assets/css/style.css?v=16" />
+  <link rel="stylesheet" href="assets/css/style.css?v=14" />
 
-  <!-- Estilos locales mínimos -->
+  <!-- Ajustes locales mínimos para esta página -->
   <style>
-    /* Título "Contacto" en verde marca */
-    .page-hero-soft .title-xl .accent { color: var(--brand); }
+    /* 1) Título del héroe en verde marca (mismo verde de Áreas) */
+    .page-hero-soft .title-xl { color: var(--brand); }
 
-    /* Grid principal */
-    .grid-contacto{ display:grid; grid-template-columns:1.05fr 1fr; gap:28px; align-items:start; }
-    @media (max-width:1000px){ .grid-contacto{ grid-template-columns:1fr; } }
-
-    /* Tarjetas */
+    /* 2) Estructura y tarjetas de contacto (mantenemos lo ya usado) */
+    .grid-contacto{
+      display:grid; grid-template-columns:1.05fr 1fr; gap:28px; align-items:start;
+    }
     .info-card{
       background:#fff; border:1px solid var(--g100); border-radius:16px;
-      padding:22px; box-shadow:0 8px 24px rgba(0,0,0,.06);
-      display:flex; gap:18px; align-items:flex-start;
+      padding:20px; box-shadow:0 8px 24px rgba(0,0,0,.06);
     }
-    .info-card h3{ margin:6px 0 6px; font-size:20px; }
-    .info-card p{ margin:0; }
+    .info-head{ display:flex; align-items:center; gap:14px; margin-bottom:8px; }
+    .info-ico{
+      width:54px; height:54px; border-radius:16px;
+      background:rgba(49,194,74,.14);      /* verde suave por defecto */
+      color:var(--brand);                   /* trazo/icono verde */
+      display:grid; place-items:center;
+    }
+    .info-ico svg{ width:28px; height:28px; }
 
-    /* Pastilla de icono (estilo Emergent) */
-    .ico-soft{
-      width:56px; height:56px; border-radius:16px;
-      background: rgba(49,194,74,.12);
-      display:grid; place-items:center; flex:0 0 56px;
-      font-size:0; /* si por error hay un emoji, no se verá */
-    }
-    .ico-soft svg{
-      width:28px; height:28px; stroke: var(--brand); fill:none; stroke-width:2.2;
+    /* Variante azul suave para tu ícono de Horarios */
+    .info-ico.blue{
+      background: rgba(63,131,248,.16); /* celeste suave */
+      color:#2a5bd7;                    /* azul del trazo */
     }
 
-    /* Formulario */
-    .form-card{
+    .info-title{ font-weight:800; font-size:20px; margin:0; }
+    .info-actions{ margin-top:12px; display:flex; gap:10px; flex-wrap:wrap; }
+
+    .contact-form{
       background:#fff; border:1px solid var(--g100); border-radius:16px;
-      padding:22px; box-shadow:0 8px 24px rgba(0,0,0,.06);
+      padding:20px; box-shadow:0 8px 24px rgba(0,0,0,.06);
     }
-    .form-grid{ display:grid; grid-template-columns:1fr 1fr; gap:16px; }
-    .form-grid .full{ grid-column:1 / -1; }
-    @media (max-width:780px){ .form-grid{ grid-template-columns:1fr; } }
+    .form-row{ display:grid; grid-template-columns:1fr 1fr; gap:14px; }
+    .form-field{ display:flex; flex-direction:column; gap:6px; }
+    .form-field label{ font-weight:700; }
+    .form-field input, .form-field select, .form-field textarea{
+      border:1px solid var(--g100); border-radius:12px; padding:12px;
+      font-size:16px; outline:none;
+    }
+    .form-field textarea{ min-height:180px; resize:vertical; }
 
-    .field{ display:flex; flex-direction:column; gap:8px; }
-    .field label{ font-weight:700; }
-    .field input,.field select,.field textarea{
-      border:1px solid var(--g100); border-radius:12px; padding:12px 14px;
-      font:inherit; outline:none;
+    .btn-submit{
+      display:inline-block;
+      background:var(--brand);
+      color:#fff;
+      padding:12px 18px;
+      border-radius:12px;
+      font-weight:800;
+      border:none;
+      cursor:pointer;
+      transition: filter .15s ease, transform .15s ease;
     }
-    .field input:focus,.field select:focus,.field textarea:focus{
-      border-color:var(--brand-600); box-shadow:0 0 0 3px rgba(49,194,74,.15);
-    }
+    .btn-submit:hover{ filter:brightness(1.03); transform: translateY(-1px); }
 
-    /* Botón de envío SIN emoji */
-    .btn-form{
-      display:inline-flex; justify-content:center; align-items:center;
-      background:var(--brand); color:#fff; font-weight:800;
-      border:none; border-radius:12px; padding:14px 22px; cursor:pointer;
+    @media (max-width: 1000px){
+      .grid-contacto{ grid-template-columns:1fr; }
+      .form-row{ grid-template-columns:1fr; }
     }
-    .btn-form:hover{ filter:brightness(0.95); }
   </style>
 </head>
 <body>
 
-  <!-- HEADER -->
+  <!-- ===== HEADER (igual que el resto del sitio) ===== -->
   <header class="site-header">
     <div class="container nav">
       <a class="brand" href="index.html">
@@ -88,179 +93,177 @@
     </div>
   </header>
 
-  <!-- HERO -->
+  <!-- ===== HÉROE ===== -->
   <section class="page-hero-soft">
     <div class="container">
-      <span class="pill soft">Estamos aquí para ayudarte</span>
-      <h1 class="title-xl"><span class="accent">Contacto</span></h1>
-      <p class="lead">Ponte en contacto con nuestro equipo. Estamos listos para atender tus consultas y brindarte la mejor atención personalizada.</p>
+      <span class="pill soft">💬 Estamos aquí para ayudarte</span>
+      <h1 class="title-xl">Contacto</h1>
+      <p class="lead">
+        Ponte en contacto con nuestro equipo. Estamos listos para atender tus consultas y
+        brindarte la mejor atención personalizada.
+      </p>
     </div>
   </section>
 
-  <!-- CUERPO -->
   <section class="section">
     <div class="container grid-contacto">
 
-      <!-- Columna izquierda -->
+      <!-- Columna izquierda: tarjetas de información -->
       <div class="col">
         <!-- Ubicación -->
         <article class="info-card">
-          <div class="ico-soft" aria-hidden="true">
-            <!-- Pin -->
-            <svg viewBox="0 0 24 24">
-              <path d="M12 21s-7-5.4-7-11a7 7 0 1 1 14 0c0 5.6-7 11-7 11z"/>
-              <circle cx="12" cy="10" r="2.8"/>
-            </svg>
+          <div class="info-head">
+            <div class="info-ico" aria-hidden="true">
+              <!-- pin -->
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 22s7-6.58 7-12a7 7 0 1 0-14 0c0 5.42 7 12 7 12Z"/>
+                <circle cx="12" cy="10" r="3"/>
+              </svg>
+            </div>
+            <h3 class="info-title">Ubicación</h3>
           </div>
-          <div>
-            <h3>Ubicación</h3>
-            <p>B/California, Entre 5to y 6to anillo de la Doble Vía La Guardia,<br>C/San Francisco 5130, Santa Cruz de la Sierra</p>
-            <p style="margin-top:8px;">
-              <a class="btn outline" href="https://maps.google.com/?q=San%20Francisco%205130%20Santa%20Cruz%20de%20la%20Sierra" target="_blank" rel="noopener">Ver en Maps →</a>
-            </p>
+          <p style="margin:8px 0 0">
+            B/California, Entre 5to y 6to anillo de la Doble Vía La Guardia,
+            C/San Francisco 5130, Santa Cruz de la Sierra
+          </p>
+          <div class="info-actions">
+            <a class="btn outline" href="https://maps.google.com/?q=San+Francisco+5130+Santa+Cruz+Bolivia" target="_blank" rel="noopener">
+              Ver en Maps →
+            </a>
           </div>
         </article>
 
-        <!-- Teléfono -->
-        <article class="info-card" style="margin-top:14px;">
-          <div class="ico-soft" aria-hidden="true">
-            <!-- Teléfono -->
-            <svg viewBox="0 0 24 24">
-              <path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1A19.3 19.3 0 0 1 3.2 8.8 19.8 19.8 0 0 1 .1 0.2 2 2 0 0 1 2.1 0h3A2 2 0 0 1 7 1.5l1.3 3.1a2 2 0 0 1-.5 2.2l-1.3 1.3a16 16 0 0 0 6.4 6.4l1.3-1.3a2 2 0 0 1 2.2-.5l3.1 1.3A2 2 0 0 1 22 16.9z"/>
-            </svg>
+        <!-- Teléfono principal -->
+        <article class="info-card">
+          <div class="info-head">
+            <div class="info-ico" aria-hidden="true">
+              <!-- teléfono -->
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.08 4.18 2 2 0 0 1 4 2h3a2 2 0 0 1 2 1.72 12.64 12.64 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.16a2 2 0 0 1 2.11-.45 12.64 12.64 0 0 0 2.81.7A2 2 0 0 1 22 16.92Z"/>
+              </svg>
+            </div>
+            <h3 class="info-title">Teléfono Principal</h3>
           </div>
-          <div>
-            <h3>Teléfono Principal</h3>
-            <p><a href="tel:+59133552378">+591 (3) 3552378</a></p>
-            <p style="margin-top:8px;"><a class="btn outline" href="tel:+59133552378">Llamar ahora →</a></p>
+          <p style="margin:8px 0 0">+591 (3) 3552378</p>
+          <div class="info-actions">
+            <a class="btn outline" href="tel:+59133552378">Llamar ahora →</a>
           </div>
         </article>
 
         <!-- Celular -->
-        <article class="info-card" style="margin-top:14px;">
-          <div class="ico-soft" aria-hidden="true">
-            <!-- Móvil -->
-            <svg viewBox="0 0 24 24">
-              <rect x="6" y="2" width="12" height="20" rx="2" ry="2"></rect>
-              <line x1="12" y1="18" x2="12" y2="18"></line>
-            </svg>
+        <article class="info-card">
+          <div class="info-head">
+            <div class="info-ico" aria-hidden="true">
+              <!-- móvil -->
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="7" y="2" width="10" height="20" rx="2" ry="2"/>
+                <line x1="12" y1="18" x2="12" y2="18"/>
+              </svg>
+            </div>
+            <h3 class="info-title">Celular</h3>
           </div>
-          <div>
-            <h3>Celular</h3>
-            <p><a href="tel:+59167781113">+591 67781113</a></p>
-            <p style="margin-top:8px;">
-              <a class="btn outline" href="https://wa.me/59167781113" target="_blank" rel="noopener">WhatsApp →</a>
-            </p>
+          <p style="margin:8px 0 0">+591 67781113</p>
+          <div class="info-actions">
+            <a class="btn outline" href="https://wa.me/59167781113" target="_blank" rel="noopener">WhatsApp →</a>
           </div>
         </article>
 
         <!-- Correo -->
-        <article class="info-card" style="margin-top:14px;">
-          <div class="ico-soft" aria-hidden="true">
-            <!-- Sobre -->
-            <svg viewBox="0 0 24 24">
-              <path d="M4 4h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2z"/>
-              <path d="m22 6-10 7L2 6"/>
-            </svg>
+        <article class="info-card">
+          <div class="info-head">
+            <div class="info-ico" aria-hidden="true">
+              <!-- sobre -->
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M4 4h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2Z"/>
+                <path d="m22 6-10 7L2 6"/>
+              </svg>
+            </div>
+            <h3 class="info-title">Correo Electrónico</h3>
           </div>
-          <div>
-            <h3>Correo Electrónico</h3>
-            <p><a href="mailto:cofisagro@gmail.com">cofisagro@gmail.com</a></p>
-            <p style="margin-top:8px;"><a class="btn outline" href="mailto:cofisagro@gmail.com">Enviar email →</a></p>
+          <p style="margin:8px 0 0">cofisagro@gmail.com</p>
+          <div class="info-actions">
+            <a class="btn outline" href="mailto:cofisagro@gmail.com">Enviar email →</a>
           </div>
         </article>
 
-        <!-- Horarios -->
-        <article class="info-card" style="margin-top:14px;">
-          <div class="ico-soft" aria-hidden="true">
-            <!-- Reloj -->
-            <svg viewBox="0 0 24 24">
-              <circle cx="12" cy="12" r="9"></circle>
-              <path d="M12 7v5l3 2"></path>
-            </svg>
+        <!-- Horarios (icono en AZUL SUAVE) -->
+        <article class="info-card">
+          <div class="info-head">
+            <div class="info-ico blue" aria-hidden="true">
+              <!-- reloj -->
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="9"/>
+                <path d="M12 7v5l3 3"/>
+              </svg>
+            </div>
+            <h3 class="info-title">Horarios de Atención</h3>
           </div>
-          <div>
-            <h3>Horarios de Atención</h3>
-            <p><strong>Lunes - Viernes:</strong> 8:00 AM - 4:00 PM</p>
-            <p><strong>Sábado:</strong> 9:00 AM - 12:00 PM</p>
-            <p><strong>Domingo:</strong> Cerrado</p>
+          <div style="margin-top:8px; line-height:1.9">
+            <div><strong>Lunes - Viernes:</strong> 8:00 AM - 4:00 PM</div>
+            <div><strong>Sábado:</strong> 9:00 AM - 12:00 PM</div>
+            <div><strong>Domingo:</strong> Cerrado</div>
           </div>
         </article>
       </div>
 
       <!-- Columna derecha: formulario -->
-      <div class="col">
-        <div class="form-card">
-          <h3 style="margin:0 0 12px;">Envíanos un Mensaje</h3>
-
-          <form action="#" method="post" onsubmit="alert('Gracias, hemos recibido tu mensaje.'); return false;">
-            <div class="form-grid">
-              <div class="field">
-                <label for="nombre">Nombre completo *</label>
-                <input id="nombre" name="nombre" type="text" placeholder="Tu nombre completo" required>
-              </div>
-              <div class="field">
-                <label for="email">Correo electrónico *</label>
-                <input id="email" name="email" type="email" placeholder="tu@email.com" required>
-              </div>
-
-              <div class="field">
-                <label for="tel">Teléfono</label>
-                <input id="tel" name="tel" type="tel" placeholder="+591 ...">
-              </div>
-              <div class="field">
-                <label for="empresa">Empresa</label>
-                <input id="empresa" name="empresa" type="text" placeholder="Nombre de tu empresa">
-              </div>
-
-              <div class="field full">
-                <label for="tipo">Tipo de consulta</label>
-                <select id="tipo" name="tipo">
-                  <option>Consulta general</option>
-                  <option>Productos agroquímicos</option>
-                  <option>Productos farmacéuticos</option>
-                  <option>Distribución / Logística</option>
-                </select>
-              </div>
-
-              <div class="field full">
-                <label for="mensaje">Mensaje *</label>
-                <textarea id="mensaje" name="mensaje" rows="6" placeholder="Describe tu consulta o necesidad..." required></textarea>
-              </div>
+      <div class="col contact-form">
+        <form action="#" method="post" onsubmit="alert('Gracias. Tu mensaje fue enviado (demo).'); return false;">
+          <div class="form-row">
+            <div class="form-field">
+              <label for="nombre">Nombre completo *</label>
+              <input id="nombre" name="nombre" type="text" placeholder="Tu nombre completo" required />
             </div>
-
-            <div style="margin-top:16px;">
-              <button type="submit" class="btn-form">Enviar Mensaje</button>
+            <div class="form-field">
+              <label for="email">Correo electrónico *</label>
+              <input id="email" name="email" type="email" placeholder="tu@email.com" required />
             </div>
-          </form>
-        </div>
-      </div>
+          </div>
 
-    </div>
-  </section>
+          <div class="form-row">
+            <div class="form-field">
+              <label for="tel">Teléfono</label>
+              <input id="tel" name="tel" type="tel" placeholder="+591 ..." />
+            </div>
+            <div class="form-field">
+              <label for="empresa">Empresa</label>
+              <input id="empresa" name="empresa" type="text" placeholder="Nombre de tu empresa" />
+            </div>
+          </div>
 
-  <!-- CTA final -->
-  <section class="cta-strip">
-    <div class="container">
-      <h2><strong>¿Listo para hacer negocios?</strong></h2>
-      <p>Contáctanos hoy mismo y descubre cómo COFISAGRO S.R.L. puede ser tu socio estratégico en productos agroquímicos y farmacéuticos.</p>
-      <div class="cta-buttons">
-        <a class="btn-primary" href="mailto:cofisagro@gmail.com">Enviar Email Directo</a>
-        <a class="btn-secondary" href="tel:+59133552378">Llamar Ahora</a>
+          <div class="form-field">
+            <label for="tipo">Tipo de consulta</label>
+            <select id="tipo" name="tipo">
+              <option>Consulta general</option>
+              <option>Distribución agroquímica</option>
+              <option>Productos farmacéuticos</option>
+              <option>Logística / Entregas</option>
+            </select>
+          </div>
+
+          <div class="form-field">
+            <label for="msg">Mensaje *</label>
+            <textarea id="msg" name="msg" placeholder="Describe tu consulta o necesidad..." required></textarea>
+          </div>
+
+          <!-- Botón sin emoji -->
+          <button class="btn-submit" type="submit">Enviar Mensaje</button>
+        </form>
       </div>
     </div>
   </section>
 
-  <!-- FOOTER -->
+  <!-- ===== FOOTER (igual que en el resto) ===== -->
   <footer>
     <div class="container foot">
       <div>
-        <div class="foot-brand">
-          <img src="assets/img/favicon.png" alt="Logo Cofisagro" class="foot-logo">
+        <div style="display:flex;gap:10px;align-items:center;margin-bottom:8px">
+          <img src="assets/img/Logotipo_Cofisagro_sin_fondo.png" alt="Logo" style="width:28px;height:28px">
           <strong>COFISAGRO S.R.L.</strong>
         </div>
         <p>Empresa boliviana especializada en distribución de productos agroquímicos desde 2010.</p>
       </div>
+
       <div>
         <h4>Navegación</h4>
         <div><a href="index.html">Inicio</a></div>
@@ -269,13 +272,15 @@
         <div><a href="areas.html">Áreas de Negocio</a></div>
         <div><a href="contacto.html">Contacto</a></div>
       </div>
+
       <div>
         <h4>Sectores</h4>
-        <div><a href="#">Agrícola</a></div>
-        <div><a href="#">Farmacéutico</a></div>
-        <div><a href="#">Distribución</a></div>
-        <div><a href="#">Comercialización</a></div>
+        <div>Agrícola</div>
+        <div>Farmacéutico</div>
+        <div>Distribución</div>
+        <div>Comercialización</div>
       </div>
+
       <div>
         <h4>Contacto</h4>
         <div>Santa Cruz de la Sierra, Bolivia</div>
@@ -290,6 +295,7 @@
 
   <script>
     const y = document.getElementById('y'); if (y) y.textContent = new Date().getFullYear();
+    // resaltar item activo
     const path = location.pathname.split('/').pop() || 'index.html';
     document.querySelectorAll('nav.menu a').forEach(a => {
       if (a.getAttribute('href') === path) a.style.opacity = '.85';
