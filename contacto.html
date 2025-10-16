@@ -4,54 +4,86 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <!-- Ruta base para que todos los links funcionen desde cualquier página -->
+  <!-- Tu sitio vive en /cofisagro.com/ -->
   <base href="/cofisagro.com/">
 
   <title>Contacto — COFISAGRO S.R.L.</title>
   <link rel="icon" type="image/png" href="assets/img/favicon.png" />
+  <!-- cache-bust del CSS global -->
   <link rel="stylesheet" href="assets/css/style.css?v=15" />
 
-  <!-- Estilos mínimos locales (solo para el layout del contacto, sin tocar style.css) -->
+  <!-- Estilos mínimos locales (sin tocar style.css) -->
   <style>
-    .page-hero-soft .title-xl { margin-top: 10px; }
-    .grid-contacto {
-      display: grid; grid-template-columns: 1.05fr 1fr; gap: 28px; align-items: start;
+    /* ——— Título verde estilo hero ——— */
+    .page-hero-soft .title-xl .accent { color: var(--brand); }
+
+    /* ——— Grid principal: tarjetas + formulario ——— */
+    .grid-contacto{
+      display:grid; grid-template-columns:1.05fr 1fr; gap:28px; align-items:start;
     }
-    @media (max-width: 1000px){ .grid-contacto{ grid-template-columns: 1fr; } }
+    @media (max-width: 1000px){ .grid-contacto{ grid-template-columns:1fr; } }
+
+    /* ——— Tarjetas (cards) ——— */
     .info-card{
-      background:#fff; border:1px solid var(--g100); border-radius:16px; padding:22px;
-      box-shadow:0 8px 24px rgba(0,0,0,.06);
+      background:#fff; border:1px solid var(--g100); border-radius:16px;
+      padding:22px; box-shadow:0 8px 24px rgba(0,0,0,.06);
+      display:flex; gap:18px; align-items:flex-start;
     }
-    .info-icon{
-      width:54px; height:54px; border-radius:16px; display:grid; place-items:center;
-      font-size:26px; color:var(--brand); background: rgba(49,194,74,.14); margin-right:12px;
+    .info-card h3{ margin: 6px 0 6px; font-size: 20px; }
+    .info-card p{ margin: 0; }
+
+    /* ——— Pastilla de icono suave (look tipo Emergent) ——— */
+    .ico-soft{
+      width:56px; height:56px; border-radius:16px;
+      background: rgba(49,194,74,.12); /* verde suave */
+      display:grid; place-items:center; flex: 0 0 56px;
     }
-    .info-row{ display:flex; align-items:center; gap:14px; margin-bottom:10px; }
+    .ico-soft svg{
+      width:28px; height:28px; stroke: var(--brand); fill: none; stroke-width: 2.2;
+    }
+    /* variantes de color si las necesitas en otras páginas
+    .ico-soft.blue{ background: rgba(63,131,248,.14); }
+    .ico-soft.blue svg{ stroke:#2a5bd7; }
+    */
+
+    /* ——— Formulario ——— */
     .form-card{
-      background:#fff; border:1px solid var(--g100); border-radius:16px; padding:22px;
-      box-shadow:0 8px 24px rgba(0,0,0,.06);
+      background:#fff; border:1px solid var(--g100); border-radius:16px;
+      padding:22px; box-shadow:0 8px 24px rgba(0,0,0,.06);
     }
-    .form-grid{ display:grid; grid-template-columns: 1fr 1fr; gap:16px; }
+    .form-grid{
+      display:grid; grid-template-columns:1fr 1fr; gap:16px;
+    }
     .form-grid .full{ grid-column: 1 / -1; }
-    .form-card label{ font-weight:700; display:block; margin-bottom:6px; }
-    .form-card input, .form-card select, .form-card textarea{
-      width:100%; border:1px solid var(--g100); border-radius:10px; padding:12px 12px; font:inherit;
+    @media (max-width: 780px){ .form-grid{ grid-template-columns:1fr; } }
+
+    .field{
+      display:flex; flex-direction:column; gap:8px;
     }
-    .form-card textarea{ min-height:140px; resize: vertical; }
-    .btn-submit{
-      display:inline-flex; align-items:center; justify-content:center; padding:14px 18px; border-radius:12px;
-      background:var(--brand); color:#fff; font-weight:800; border:none; cursor:pointer;
-      box-shadow: 0 6px 18px rgba(0,0,0,.12);
+    .field label{ font-weight:700; }
+    .field input, .field select, .field textarea{
+      border:1px solid var(--g100); border-radius:12px; padding:12px 14px;
+      font: inherit; outline: none;
     }
-    .cta-bottom .btn-primary, .cta-bottom .btn-secondary{ font-size:18px; }
-    /* Footer brand row (logo + nombre alineados) */
-    .foot-brand{ display:flex; gap:10px; align-items:center; margin-bottom:8px; }
-    .foot-logo{ width:28px; height:28px; border-radius:999px; display:block; }
+    .field input:focus, .field select:focus, .field textarea:focus{
+      border-color: var(--brand-600); box-shadow: 0 0 0 3px rgba(49,194,74,.15);
+    }
+
+    /* ——— Botón de envío sin emoji ——— */
+    .btn-form{
+      display:inline-flex; justify-content:center; align-items:center;
+      background: var(--brand); color:#fff; font-weight:800;
+      border:none; border-radius:12px; padding:14px 22px; cursor:pointer;
+    }
+    .btn-form:hover{ filter: brightness(0.95); }
+
+    /* CTA final (idéntico look que usas en otras secciones) */
+    .cta-strip h2 strong{ color:#fff; }
   </style>
 </head>
 <body>
 
-  <!-- ===== HEADER (igual que la home) ===== -->
+  <!-- ===== HEADER ===== -->
   <header class="site-header">
     <div class="container nav">
       <a class="brand" href="index.html">
@@ -61,7 +93,7 @@
       <nav class="menu">
         <a href="index.html">Inicio</a>
         <a href="nosotros.html">Nosotros</a>
-        <a href="mision-vision.html">Misión &amp; Visión</a>
+        <a href="mision-vision.html">Misión & Visión</a>
         <a href="areas.html">Áreas de Negocio</a>
         <a class="btn-cta" href="contacto.html">Contacto</a>
       </nav>
@@ -72,210 +104,207 @@
   <section class="page-hero-soft">
     <div class="container">
       <span class="pill soft">💬 Estamos aquí para ayudarte</span>
-      <h1 class="title-xl">Contacto</h1>
-      <p class="lead">
-        Ponte en contacto con nuestro equipo. Estamos listos para atender tus consultas y
-        brindarte la mejor atención personalizada.
-      </p>
+      <h1 class="title-xl"><span class="accent">Contacto</span></h1>
+      <p class="lead">Ponte en contacto con nuestro equipo. Estamos listos para atender tus consultas y brindarte la mejor atención personalizada.</p>
     </div>
   </section>
 
-  <!-- ===== CONTENIDO: INFO + FORM ===== -->
+  <!-- ===== CONTENIDO PRINCIPAL ===== -->
   <section class="section">
     <div class="container grid-contacto">
-      <!-- Columna izquierda: Tarjetas de información -->
-      <div class="left">
+
+      <!-- Columna Izquierda: tarjetas -->
+      <div class="col">
         <!-- Ubicación -->
-        <div class="info-card" style="margin-bottom:16px">
-          <div class="info-row">
-            <div class="info-icon">📍</div>
-            <div>
-              <h3 style="margin:0">Ubicación</h3>
-            </div>
+        <article class="info-card">
+          <div class="ico-soft" aria-hidden="true">
+            <!-- Pin/Ubicación -->
+            <svg viewBox="0 0 24 24">
+              <path d="M12 21s-7-5.4-7-11a7 7 0 1 1 14 0c0 5.6-7 11-7 11z"/>
+              <circle cx="12" cy="10" r="2.8"/>
+            </svg>
           </div>
-          <p style="margin:10px 0 14px">
-            B/California, Entre 5to y 6to anillo de la Doble Vía La Guardia,
-            C/San Francisco 5130, Santa Cruz de la Sierra
-          </p>
-          <a class="btn outline" href="https://www.google.com/maps/search/?api=1&query=San+Francisco+5130,+Santa+Cruz+de+la+Sierra" target="_blank" rel="noopener">
-            Ver en Maps →
-          </a>
-        </div>
+          <div>
+            <h3>Ubicación</h3>
+            <p>B/California, Entre 5to y 6to anillo de la Doble Vía La Guardia,<br>C/San Francisco 5130, Santa Cruz de la Sierra</p>
+            <p style="margin-top:8px;">
+              <a class="btn outline" href="https://maps.google.com/?q=San%20Francisco%205130%20Santa%20Cruz%20de%20la%20Sierra" target="_blank" rel="noopener">Ver en Maps →</a>
+            </p>
+          </div>
+        </article>
 
         <!-- Teléfono principal -->
-        <div class="info-card" style="margin-bottom:16px">
-          <div class="info-row">
-            <div class="info-icon">📞</div>
-            <div><h3 style="margin:0">Teléfono Principal</h3></div>
+        <article class="info-card" style="margin-top:14px;">
+          <div class="ico-soft" aria-hidden="true">
+            <!-- Teléfono -->
+            <svg viewBox="0 0 24 24">
+              <path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1A19.3 19.3 0 0 1 3.2 8.8 19.8 19.8 0 0 1 .1 0.2 2 2 0 0 1 2.1 0h3A2 2 0 0 1 7 1.5l1.3 3.1a2 2 0 0 1-.5 2.2l-1.3 1.3a16 16 0 0 0 6.4 6.4l1.3-1.3a2 2 0 0 1 2.2-.5l3.1 1.3A2 2 0 0 1 22 16.9z"/>
+            </svg>
           </div>
-          <p style="margin:10px 0 14px">+591 (3) 3552378</p>
-          <a class="btn outline" href="tel:+59133552378">Llamar ahora →</a>
-        </div>
+          <div>
+            <h3>Teléfono Principal</h3>
+            <p><a href="tel:+59133552378">+591 (3) 3552378</a></p>
+            <p style="margin-top:8px;"><a class="btn outline" href="tel:+59133552378">Llamar ahora →</a></p>
+          </div>
+        </article>
 
         <!-- Celular / WhatsApp -->
-        <div class="info-card" style="margin-bottom:16px">
-          <div class="info-row">
-            <div class="info-icon">📱</div>
-            <div><h3 style="margin:0">Celular</h3></div>
+        <article class="info-card" style="margin-top:14px;">
+          <div class="ico-soft" aria-hidden="true">
+            <!-- Celular -->
+            <svg viewBox="0 0 24 24">
+              <rect x="6" y="2" width="12" height="20" rx="2" ry="2"></rect>
+              <line x1="12" y1="18" x2="12" y2="18"></line>
+            </svg>
           </div>
-          <p style="margin:10px 0 14px">+591 67781113</p>
-          <a class="btn outline" href="https://wa.me/59167781113" target="_blank" rel="noopener">WhatsApp →</a>
-        </div>
+          <div>
+            <h3>Celular</h3>
+            <p><a href="tel:+59167781113">+591 67781113</a></p>
+            <p style="margin-top:8px;">
+              <a class="btn outline" href="https://wa.me/59167781113" target="_blank" rel="noopener">WhatsApp →</a>
+            </p>
+          </div>
+        </article>
 
         <!-- Correo -->
-        <div class="info-card" style="margin-bottom:16px">
-          <div class="info-row">
-            <div class="info-icon">✉️</div>
-            <div><h3 style="margin:0">Correo Electrónico</h3></div>
+        <article class="info-card" style="margin-top:14px;">
+          <div class="ico-soft" aria-hidden="true">
+            <!-- Mail -->
+            <svg viewBox="0 0 24 24">
+              <path d="M4 4h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2z"/>
+              <path d="m22 6-10 7L2 6"/>
+            </svg>
           </div>
-          <p style="margin:10px 0 14px">cofisagro@gmail.com</p>
-          <a class="btn outline" href="mailto:cofisagro@gmail.com">Enviar email →</a>
-        </div>
+          <div>
+            <h3>Correo Electrónico</h3>
+            <p><a href="mailto:cofisagro@gmail.com">cofisagro@gmail.com</a></p>
+            <p style="margin-top:8px;"><a class="btn outline" href="mailto:cofisagro@gmail.com">Enviar email →</a></p>
+          </div>
+        </article>
 
         <!-- Horarios -->
-        <div class="info-card">
-          <div class="info-row">
-            <div class="info-icon" style="color:#2a5bd7;background:rgba(63,131,248,.14)">🕒</div>
-            <div><h3 style="margin:0">Horarios de Atención</h3></div>
+        <article class="info-card" style="margin-top:14px;">
+          <div class="ico-soft" aria-hidden="true">
+            <!-- Reloj -->
+            <svg viewBox="0 0 24 24">
+              <circle cx="12" cy="12" r="9"></circle>
+              <path d="M12 7v5l3 2"></path>
+            </svg>
           </div>
-          <div style="margin-top:8px">
-            <div style="display:flex;justify-content:space-between;border-top:1px solid var(--g100);padding:10px 0">
-              <strong>Lunes - Viernes</strong><span>8:00 AM - 4:00 PM</span>
-            </div>
-            <div style="display:flex;justify-content:space-between;border-top:1px solid var(--g100);padding:10px 0">
-              <strong>Sábado</strong><span>9:00 AM - 12:00 PM</span>
-            </div>
-            <div style="display:flex;justify-content:space-between;border-top:1px solid var(--g100);padding:10px 0">
-              <strong>Domingo</strong><span>Cerrado</span>
-            </div>
+          <div>
+            <h3>Horarios de Atención</h3>
+            <p><strong>Lunes - Viernes:</strong> 8:00 AM - 4:00 PM</p>
+            <p><strong>Sábado:</strong> 9:00 AM - 12:00 PM</p>
+            <p><strong>Domingo:</strong> Cerrado</p>
           </div>
+        </article>
+      </div>
+
+      <!-- Columna Derecha: formulario -->
+      <div class="col">
+        <div class="form-card">
+          <h3 style="margin:0 0 12px;">Envíanos un Mensaje</h3>
+
+          <form action="#" method="post" onsubmit="alert('Gracias, hemos recibido tu mensaje.'); return false;">
+            <div class="form-grid">
+              <div class="field">
+                <label for="nombre">Nombre completo *</label>
+                <input id="nombre" name="nombre" type="text" placeholder="Tu nombre completo" required>
+              </div>
+              <div class="field">
+                <label for="email">Correo electrónico *</label>
+                <input id="email" name="email" type="email" placeholder="tu@email.com" required>
+              </div>
+
+              <div class="field">
+                <label for="tel">Teléfono</label>
+                <input id="tel" name="tel" type="tel" placeholder="+591 ...">
+              </div>
+              <div class="field">
+                <label for="empresa">Empresa</label>
+                <input id="empresa" name="empresa" type="text" placeholder="Nombre de tu empresa">
+              </div>
+
+              <div class="field full">
+                <label for="tipo">Tipo de consulta</label>
+                <select id="tipo" name="tipo">
+                  <option>Consulta general</option>
+                  <option>Productos agroquímicos</option>
+                  <option>Productos farmacéuticos</option>
+                  <option>Distribución / Logística</option>
+                </select>
+              </div>
+
+              <div class="field full">
+                <label for="mensaje">Mensaje *</label>
+                <textarea id="mensaje" name="mensaje" rows="6" placeholder="Describe tu consulta o necesidad..." required></textarea>
+              </div>
+            </div>
+
+            <div style="margin-top:16px;">
+              <button type="submit" class="btn-form">Enviar Mensaje</button>
+            </div>
+          </form>
         </div>
       </div>
 
-      <!-- Columna derecha: Formulario -->
-      <div class="right">
-        <form class="form-card" id="contactoForm">
-          <div class="form-grid">
-            <div>
-              <label for="nombre">Nombre completo *</label>
-              <input id="nombre" name="nombre" type="text" required placeholder="Tu nombre completo">
-            </div>
-            <div>
-              <label for="email">Correo electrónico *</label>
-              <input id="email" name="email" type="email" required placeholder="tu@email.com">
-            </div>
-            <div>
-              <label for="telefono">Teléfono</label>
-              <input id="telefono" name="telefono" type="tel" placeholder="+591 ...">
-            </div>
-            <div>
-              <label for="empresa">Empresa</label>
-              <input id="empresa" name="empresa" type="text" placeholder="Nombre de tu empresa">
-            </div>
-            <div class="full">
-              <label for="tipo">Tipo de consulta</label>
-              <select id="tipo" name="tipo">
-                <option>Consulta general</option>
-                <option>Sector Agrícola</option>
-                <option>Sector Farmacéutico</option>
-                <option>Distribución y logística</option>
-              </select>
-            </div>
-            <div class="full">
-              <label for="mensaje">Mensaje *</label>
-              <textarea id="mensaje" name="mensaje" required placeholder="Describe tu consulta o necesidad..."></textarea>
-            </div>
-            <div class="full">
-              <button type="submit" class="btn-submit">✈️&nbsp; Enviar Mensaje</button>
-            </div>
-          </div>
-        </form>
-      </div>
     </div>
   </section>
 
-  <!-- ===== CTA FINAL ===== -->
-  <section class="cta-strip cta-bottom">
-    <div class="container" style="text-align:center">
-      <h2>¿Listo para hacer negocios?</h2>
+  <!-- CTA final -->
+  <section class="cta-strip">
+    <div class="container">
+      <h2><strong>¿Listo para hacer negocios?</strong></h2>
       <p>Contáctanos hoy mismo y descubre cómo COFISAGRO S.R.L. puede ser tu socio estratégico en productos agroquímicos y farmacéuticos.</p>
       <div class="cta-buttons">
-        <a class="btn-primary" href="mailto:cofisagro@gmail.com?subject=Consulta%20desde%20la%20web">Enviar Email Directo</a>
+        <a class="btn-primary" href="mailto:cofisagro@gmail.com">Enviar Email Directo</a>
         <a class="btn-secondary" href="tel:+59133552378">Llamar Ahora</a>
       </div>
     </div>
   </section>
 
-  <!-- ===== FOOTER (igual que la home) ===== -->
+  <!-- ===== FOOTER ===== -->
   <footer>
-    <div class="container">
-      <div class="foot">
-        <div>
-          <div class="foot-brand">
-            <img src="assets/img/Logotipo_Cofisagro_sin_fondo.png" alt="Logo Cofisagro" class="foot-logo">
-            <strong>COFISAGRO S.R.L.</strong>
-          </div>
-          <small>Empresa boliviana especializada en distribución de productos agroquímicos y farmacéuticos desde 2010.</small>
+    <div class="container foot">
+      <div>
+        <div class="foot-brand">
+          <img src="assets/img/favicon.png" alt="Logo Cofisagro" class="foot-logo">
+          <strong>COFISAGRO S.R.L.</strong>
         </div>
-
-        <div>
-          <h4>Navegación</h4>
-          <a href="index.html">Inicio</a><br>
-          <a href="nosotros.html">Nosotros</a><br>
-          <a href="mision-vision.html">Misión &amp; Visión</a><br>
-          <a href="areas.html">Áreas de Negocio</a><br>
-          <a href="contacto.html">Contacto</a>
-        </div>
-
-        <div>
-          <h4>Sectores</h4>
-          <div>Agrícola</div>
-          <div>Farmacéutico</div>
-          <div>Distribución</div>
-          <div>Comercialización</div>
-        </div>
-
-        <div>
-          <h4>Contacto</h4>
-          <div>Santa Cruz de la Sierra, Bolivia</div>
-          <div>Email: cofisagro@gmail.com</div>
-          <div>Tel: (+591) 3 3552378</div>
-        </div>
+        <p>Empresa boliviana especializada en distribución de productos agroquímicos desde 2010.</p>
       </div>
-
-      <div class="bottom-bar">
-        <small>© <span id="year"></span> COFISAGRO S.R.L.</small>
-        <a href="#top">Volver arriba ↑</a>
+      <div>
+        <h4>Navegación</h4>
+        <div><a href="index.html">Inicio</a></div>
+        <div><a href="nosotros.html">Nosotros</a></div>
+        <div><a href="mision-vision.html">Misión & Visión</a></div>
+        <div><a href="areas.html">Áreas de Negocio</a></div>
+        <div><a href="contacto.html">Contacto</a></div>
       </div>
+      <div>
+        <h4>Sectores</h4>
+        <div><a href="#">Agrícola</a></div>
+        <div><a href="#">Farmacéutico</a></div>
+        <div><a href="#">Distribución</a></div>
+        <div><a href="#">Comercialización</a></div>
+      </div>
+      <div>
+        <h4>Contacto</h4>
+        <div>Santa Cruz de la Sierra, Bolivia</div>
+        <div><a href="mailto:cofisagro@gmail.com">cofisagro@gmail.com</a></div>
+        <div><a href="tel:+59133552378">(+591) 3 3552378</a></div>
+      </div>
+    </div>
+    <div class="container bottom-bar">
+      <small>© <span id="y"></span> COFISAGRO S.R.L.</small>
     </div>
   </footer>
 
-  <!-- WhatsApp flotante (igual que en la home) -->
-  <a class="whatsapp" href="https://wa.me/59167781113?text=Hola%20COFISAGRO%2C%20quisiera%20informaci%C3%B3n" target="_blank" rel="noopener">WhatsApp</a>
-
   <script>
-    // Año en footer
-    document.getElementById('year').textContent = new Date().getFullYear();
-
-    // Envío del formulario vía mailto (sin backend)
-    document.getElementById('contactoForm').addEventListener('submit', function(e){
-      e.preventDefault();
-      const nombre   = encodeURIComponent(document.getElementById('nombre').value.trim());
-      const email    = encodeURIComponent(document.getElementById('email').value.trim());
-      const tel      = encodeURIComponent(document.getElementById('telefono').value.trim());
-      const empresa  = encodeURIComponent(document.getElementById('empresa').value.trim());
-      const tipo     = encodeURIComponent(document.getElementById('tipo').value);
-      const mensaje  = encodeURIComponent(document.getElementById('mensaje').value.trim());
-
-      const subject = `Consulta Web - ${decodeURIComponent(tipo)}`;
-      const body = `Nombre: ${decodeURIComponent(nombre)}%0D%0A` +
-                   `Email: ${decodeURIComponent(email)}%0D%0A` +
-                   `Teléfono: ${decodeURIComponent(tel)}%0D%0A` +
-                   `Empresa: ${decodeURIComponent(empresa)}%0D%0A` +
-                   `Tipo de consulta: ${decodeURIComponent(tipo)}%0D%0A%0D%0A` +
-                   `Mensaje:%0D%0A${decodeURIComponent(mensaje)}`;
-
-      window.location.href = `mailto:cofisagro@gmail.com?subject=${encodeURIComponent(subject)}&body=${body}`;
+    const y = document.getElementById('y'); if (y) y.textContent = new Date().getFullYear();
+    const path = location.pathname.split('/').pop() || 'index.html';
+    document.querySelectorAll('nav.menu a').forEach(a => {
+      if (a.getAttribute('href') === path) a.style.opacity = '.85';
     });
   </script>
 </body>
