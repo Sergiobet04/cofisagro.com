@@ -4,16 +4,66 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <!-- Ruta base para GitHub Pages -->
+  <!-- Tu sitio vive en /cofisagro.com/ -->
   <base href="/cofisagro.com/">
 
   <title>Nosotros — COFISAGRO S.R.L.</title>
   <link rel="icon" type="image/png" href="assets/img/favicon.png" />
   <link rel="stylesheet" href="assets/css/style.css?v=15" />
+
+  <!-- Estilos locales de esta página -->
+  <style>
+    /* ===== HÉROE ===== */
+    .page-hero-soft{ padding: 64px 0 40px; text-align:center; }
+    .pill.soft{ display:inline-flex; gap:10px; align-items:center; padding:10px 16px; border-radius:999px; font-weight:800; background:rgba(49,194,74,.16); color:var(--brand); }
+    .pill svg{ width:18px; height:18px; }
+    .title-xl{ font-size: clamp(34px, 6vw, 62px); margin: 14px 0 10px; font-weight: 900; }
+    .accent{ color: var(--brand-600); }
+
+    /* ===== MÉTRICAS ===== */
+    .metrics-wrap{ padding: 24px 0 54px; }
+    .metrics{ display:grid; grid-template-columns: repeat(3, 1fr); gap:16px; }
+    .metric-card{
+      background:#fff; border:1px solid var(--g100); border-radius:16px; padding:22px;
+      text-align:center; box-shadow:0 10px 26px rgba(0,0,0,.06);
+    }
+    .metric-card strong{ display:block; color:var(--brand); font-size: clamp(28px, 4vw, 40px); }
+    .metric-card small{ display:block; color:#334155; opacity:.9; margin-top:6px; }
+
+    /* ===== TRAYECTORIA ===== */
+    .trayectoria h2{ text-align:center; margin:0 0 10px; font-size: clamp(28px, 4.2vw, 40px); font-weight: 900; }
+    .trayectoria .lead{ text-align:center; max-width: 1000px; margin: 0 auto 24px; opacity:.9; }
+    .trayectoria .content{
+      max-width: 1100px; margin: 0 auto; line-height:1.9; font-size: clamp(16px, 1.4vw, 20px);
+    }
+    .trayectoria .content strong{ color: var(--brand-600); }
+
+    /* ===== VALORES ===== */
+    .valores h2{ text-align:center; margin:0 0 10px; font-size: clamp(28px, 4.2vw, 40px); font-weight: 900; }
+    .valores .lead{ text-align:center; max-width: 980px; margin: 0 auto 28px; opacity:.9; }
+    .values-grid{ display:grid; grid-template-columns:repeat(4,1fr); gap:18px; }
+    .value-card{
+      background:#fff; border:1px solid var(--g100); border-radius:18px; padding:26px 22px; text-align:center;
+      box-shadow:0 12px 28px rgba(0,0,0,.06);
+    }
+    .value-icon{
+      width:72px; height:72px; border-radius:18px; margin: 0 auto 14px;
+      display:grid; place-items:center; background:rgba(49,194,74,.14); color:var(--brand);
+    }
+    .value-icon svg{ width:34px; height:34px; }
+    .value-title{ font-size:22px; font-weight:800; margin:6px 0 10px; color:#0f172a; }
+    .value-text{ color:#334155; line-height:1.8; }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 1000px){
+      .metrics{ grid-template-columns:1fr; }
+      .values-grid{ grid-template-columns:1fr; }
+    }
+  </style>
 </head>
 <body>
 
-  <!-- ===== HEADER (igual que la home) ===== -->
+  <!-- ===== HEADER ===== -->
   <header class="site-header">
     <div class="container nav">
       <a class="brand" href="index.html">
@@ -23,17 +73,26 @@
       <nav class="menu">
         <a href="index.html">Inicio</a>
         <a href="nosotros.html">Nosotros</a>
-        <a href="mision-vision.html">Misión &amp; Visión</a>
+        <a href="mision-vision.html">Misión & Visión</a>
         <a href="areas.html">Áreas de Negocio</a>
         <a class="btn-cta" href="contacto.html">Contacto</a>
       </nav>
     </div>
   </header>
 
-  <!-- ===== HERO INTERNO ===== -->
+  <!-- ===== HÉROE ===== -->
   <section class="page-hero-soft">
     <div class="container">
-      <span class="pill soft">🏢 Quiénes somos</span>
+      <span class="pill soft">
+        <!-- Building icon -->
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M3 21h18"/>
+          <path d="M4 21V7a2 2 0 0 1 2-2h6v16"/>
+          <path d="M14 21V3h4a2 2 0 0 1 2 2v16"/>
+          <path d="M8 7h2M8 11h2M8 15h2M16 7h2M16 11h2M16 15h2"/>
+        </svg>
+        Quiénes somos
+      </span>
       <h1 class="title-xl">Sobre <span class="accent">COFISAGRO S.R.L.</span></h1>
       <p class="lead">
         Empresa boliviana dedicada a la distribución de productos <strong>agroquímicos</strong> y
@@ -42,139 +101,185 @@
     </div>
   </section>
 
-  <!-- ===== HISTORIA + VALORES ===== -->
-  <section class="section">
-    <div class="container">
-      <div class="grid2">
-        <!-- Historia -->
-        <article class="card">
-          <h2 style="margin-bottom:6px">Nuestra Historia</h2>
-          <p>
-            Desde 2010 atendemos a clientes en Santa Cruz de la Sierra y otras regiones de Bolivia,
-            conectando fabricantes internacionales con productores y distribuidores locales. Nuestro
-            crecimiento se ha basado en <strong>confianza</strong>, <strong>servicio</strong> y
-            <strong>cumplimiento</strong>.
-          </p>
-          <ul style="margin:14px 0 0 18px; line-height:1.8">
-            <li>Inicio de operaciones en el sector agrícola (2010)</li>
-            <li>Expansión al sector farmacéutico (2014)</li>
-            <li>Optimización logística y formalización de procesos (2017–2022)</li>
-            <li>Consolidación y ampliación de cartera de clientes (actualidad)</li>
-          </ul>
-        </article>
+  <!-- ===== MÉTRICAS ===== -->
+  <section class="metrics-wrap">
+    <div class="container metrics">
+      <div class="metric-card">
+        <strong>15+</strong>
+        <small>Años de Experiencia</small>
+      </div>
+      <div class="metric-card">
+        <strong>2</strong>
+        <small>Sectores Principales</small>
+      </div>
+      <div class="metric-card">
+        <strong>100%</strong>
+        <small>Compromiso</small>
+      </div>
+    </div>
+  </section>
 
-        <!-- Valores -->
-        <article class="card">
-          <h2 style="margin-bottom:6px">Nuestros Valores</h2>
-          <p>Principios que guían nuestro trabajo diario:</p>
-          <div class="pills" style="margin-top:8px">
-            <span>Calidad</span><span>Confianza</span><span>Responsabilidad</span>
-            <span>Cumplimiento</span><span>Atención personalizada</span>
+  <!-- ===== TRAYECTORIA ===== -->
+  <section class="section trayectoria">
+    <div class="container">
+      <h2>Nuestra <span class="accent">Trayectoria</span></h2>
+      <p class="lead">Más de una década construyendo confianza y excelencia en Bolivia</p>
+
+      <div class="content">
+        <p>
+          <strong>COFISAGRO S.R.L.</strong> es una empresa boliviana fundada el 18 de enero de 2010,
+          dedicada a la comercialización y distribución de productos agroquímicos y farmacéuticos.
+          Desde sus inicios, la compañía ha mantenido un firme compromiso con la calidad y la
+          responsabilidad, consolidándose como un aliado estratégico para el desarrollo del sector
+          agrícola y farmacéutico en Bolivia.
+        </p>
+        <p>
+          A lo largo de más de una década, COFISAGRO ha construido relaciones sólidas con fabricantes
+          y proveedores nacionales e internacionales, distribuyendo productos de reconocida calidad
+          y eficiencia, que contribuyen al crecimiento sostenible de la producción agrícola y a la
+          mejora del bienestar de la población a través del suministro responsable de productos
+          farmacéuticos.
+        </p>
+        <p>
+          La empresa comenzó sus operaciones en el departamento de Santa Cruz de la Sierra,
+          expandiendo gradualmente su presencia hacia otros departamentos del país. En 2018,
+          amplió sus servicios al sector farmacéutico, distribuyendo medicamentos y productos
+          farmacéuticos a farmacias, hospitales y centros de salud.
+        </p>
+        <p>
+          Gracias a su experiencia, capacidad logística y compromiso con el servicio, hoy COFISAGRO
+          es reconocida por su eficiencia operativa, confiabilidad y atención personalizada a sus
+          clientes, operando desde sus oficinas y almacén en Santa Cruz de la Sierra.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== VALORES ===== -->
+  <section class="section valores">
+    <div class="container">
+      <h2>Nuestros <span class="accent">Valores</span></h2>
+      <p class="lead">Los principios que guían cada una de nuestras decisiones y acciones</p>
+
+      <div class="values-grid">
+        <!-- Calidad -->
+        <article class="value-card">
+          <div class="value-icon" aria-hidden="true">
+            <!-- Award -->
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="8" r="5"/>
+              <path d="M8.5 14.5 7 22l5-3 5 3-1.5-7.5"/>
+            </svg>
           </div>
-          <p style="margin-top:12px">
-            Creemos en relaciones transparentes y en resultados sostenibles para clientes,
-            colaboradores y la comunidad.
+          <h3 class="value-title">Calidad</h3>
+          <p class="value-text">
+            Garantizamos productos de la más alta calidad, trabajando solo con marcas
+            reconocidas internacionalmente.
           </p>
         </article>
-      </div>
-    </div>
-  </section>
 
-  <!-- ===== CUMPLIMIENTO & EQUIPO ===== -->
-  <section class="section">
-    <div class="container">
-      <div class="grid2">
-        <!-- Certificaciones & Cumplimiento -->
-        <article class="card">
-          <h2 style="margin-bottom:6px">Certificaciones & Cumplimiento</h2>
-          <p>
-            Operamos con altos estándares de calidad y seguridad. Priorizamos la trazabilidad de
-            productos y el cumplimiento normativo aplicable a los sectores agrícola y farmacéutico.
-          </p>
-          <ul style="margin:14px 0 0 18px; line-height:1.8">
-            <li>Buenas prácticas de distribución</li>
-            <li>Control de inventarios y lote/serie</li>
-            <li>Procedimientos documentados y auditorías</li>
-          </ul>
-        </article>
-
-        <!-- Equipo -->
-        <article class="card">
-          <h2 style="margin-bottom:6px">Nuestro Equipo</h2>
-          <p>
-            Un equipo multidisciplinario con experiencia en agronomía, comercial, logística y atención
-            al cliente. Nos enfocamos en brindar <strong>asesoramiento técnico</strong> y un
-            <strong>servicio confiable</strong>.
-          </p>
-          <div class="pills" style="margin-top:8px">
-            <span>Asesoría técnica</span><span>Logística</span><span>Comercial</span><span>Postventa</span>
+        <!-- Responsabilidad -->
+        <article class="value-card">
+          <div class="value-icon" aria-hidden="true">
+            <!-- Users -->
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/>
+              <circle cx="9" cy="7" r="4"/>
+              <path d="M22 21v-2a4 4 0 0 0-3-3.87"/>
+              <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+            </svg>
           </div>
+          <h3 class="value-title">Responsabilidad</h3>
+          <p class="value-text">
+            Comprometidos con nuestros clientes, empleados y el medio ambiente en cada una
+            de nuestras operaciones.
+          </p>
+        </article>
+
+        <!-- Eficiencia -->
+        <article class="value-card">
+          <div class="value-icon" aria-hidden="true">
+            <!-- Trend Up -->
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="m3 17 6-6 4 4 7-7"/>
+              <path d="M14 5h7v7"/>
+            </svg>
+          </div>
+          <h3 class="value-title">Eficiencia</h3>
+          <p class="value-text">
+            Optimizamos constantemente nuestros procesos para brindar el mejor servicio
+            y resultados.
+          </p>
+        </article>
+
+        <!-- Compromiso -->
+        <article class="value-card">
+          <div class="value-icon" aria-hidden="true">
+            <!-- Globe -->
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="9"/>
+              <path d="M2.5 12h19"/>
+              <path d="M12 2.5c3 3.5 3 15 0 19"/>
+              <path d="M12 2.5c-3 3.5-3 15 0 19"/>
+            </svg>
+          </div>
+          <h3 class="value-title">Compromiso</h3>
+          <p class="value-text">
+            Mantenemos nuestro compromiso con la calidad y el servicio personalizado en cada
+            operación.
+          </p>
         </article>
       </div>
     </div>
   </section>
 
-  <!-- ===== CTA ===== -->
-  <section class="cta-strip">
-    <div class="container">
-      <h2>¿Listo para conocernos mejor?</h2>
-      <p>Escríbenos y conversemos sobre cómo podemos colaborar en tus próximos proyectos.</p>
-      <div class="cta-buttons">
-        <a class="btn-primary" href="contacto.html">Contactar Ahora</a>
-        <a class="btn-secondary" href="areas.html">Nuestros Servicios</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== FOOTER (igual que la home) ===== -->
+  <!-- ===== FOOTER ===== -->
   <footer>
-    <div class="container">
-      <div class="foot">
-        <div>
-          <div style="display:flex;gap:10px;align-items:center;margin-bottom:8px">
-            <img src="assets/img/Logotipo_Cofisagro_sin_fondo.png" alt="Logo" style="width:28px;height:28px">
-            <strong>COFISAGRO S.R.L.</strong>
-          </div>
-          <small>Empresa boliviana especializada en distribución de productos agroquímicos y farmacéuticos desde 2010.</small>
+    <div class="container foot">
+      <div>
+        <div style="display:flex;gap:10px;align-items:center;margin-bottom:8px">
+          <img src="assets/img/Logotipo_Cofisagro_sin_fondo.png" alt="Logo" style="width:28px;height:28px">
+          <strong>COFISAGRO S.R.L.</strong>
         </div>
-
-        <div>
-          <h4>Navegación</h4>
-          <a href="index.html">Inicio</a><br>
-          <a href="nosotros.html">Nosotros</a><br>
-          <a href="mision-vision.html">Misión &amp; Visión</a><br>
-          <a href="areas.html">Áreas de Negocio</a><br>
-          <a href="contacto.html">Contacto</a>
-        </div>
-
-        <div>
-          <h4>Sectores</h4>
-          <div>Agrícola</div>
-          <div>Farmacéutico</div>
-          <div>Distribución</div>
-          <div>Comercialización</div>
-        </div>
-
-        <div>
-          <h4>Contacto</h4>
-          <div>Santa Cruz de la Sierra, Bolivia</div>
-          <div>Email: cofisagro@gmail.com</div>
-          <div>Tel: (+591) 3 3552378</div>
-        </div>
+        <p>Empresa boliviana especializada en distribución de productos agroquímicos desde 2010.</p>
       </div>
 
-      <div class="bottom-bar">
-        <small>© <span id="year"></span> COFISAGRO S.R.L.</small>
-        <a href="#top">Volver arriba ↑</a>
+      <div>
+        <h4>Navegación</h4>
+        <div><a href="index.html">Inicio</a></div>
+        <div><a href="nosotros.html">Nosotros</a></div>
+        <div><a href="mision-vision.html">Misión & Visión</a></div>
+        <div><a href="areas.html">Áreas de Negocio</a></div>
+        <div><a href="contacto.html">Contacto</a></div>
       </div>
+
+      <div>
+        <h4>Sectores</h4>
+        <div>Agrícola</div>
+        <div>Farmacéutico</div>
+        <div>Distribución</div>
+        <div>Comercialización</div>
+      </div>
+
+      <div>
+        <h4>Contacto</h4>
+        <div>Santa Cruz de la Sierra, Bolivia</div>
+        <div><a href="mailto:cofisagro@gmail.com">cofisagro@gmail.com</a></div>
+        <div><a href="tel:+59133552378">(+591) 3 3552378</a></div>
+      </div>
+    </div>
+    <div class="container bottom-bar">
+      <small>© <span id="y"></span> COFISAGRO S.R.L.</small>
     </div>
   </footer>
 
-  <!-- WhatsApp flotante (igual que en la home) -->
-  <a class="whatsapp" href="https://wa.me/59167781113?text=Hola%20COFISAGRO%2C%20quisiera%20informaci%C3%B3n" target="_blank" rel="noopener">WhatsApp</a>
-
   <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
+    // Año en footer y resaltar ítem activo del menú
+    const y = document.getElementById('y'); if (y) y.textContent = new Date().getFullYear();
+    const path = location.pathname.split('/').pop() || 'index.html';
+    document.querySelectorAll('nav.menu a').forEach(a => {
+      if (a.getAttribute('href') === path) a.style.opacity = '.85';
+    });
   </script>
 </body>
 </html>
