@@ -13,10 +13,23 @@
 
   <!-- Ajustes locales mínimos para esta página -->
   <style>
-    /* 1) Título del héroe en verde marca (mismo verde de Áreas) */
-    .page-hero-soft .title-xl { color: var(--brand); }
+    /* 1) Título del héroe en el MISMO verde de Áreas (brand-600) */
+    .page-hero-soft .title-xl { color: var(--brand-600); }
 
-    /* 2) Estructura y tarjetas de contacto (mantenemos lo ya usado) */
+    /* 2) Placeholders y controles del formulario con la misma fuente/estilo */
+    input::placeholder,
+    textarea::placeholder,
+    select::placeholder {
+      font-family: Inter, system-ui, Segoe UI, Roboto, Arial, sans-serif;
+      font-weight: 400;
+      color: #6b7280;  /* gris medio consistente */
+      opacity: 1;
+    }
+    input, textarea, select, button {
+      font-family: Inter, system-ui, Segoe UI, Roboto, Arial, sans-serif;
+    }
+
+    /* 3) Estructura y tarjetas de contacto (lo que ya usabas) */
     .grid-contacto{
       display:grid; grid-template-columns:1.05fr 1fr; gap:28px; align-items:start;
     }
@@ -33,7 +46,7 @@
     }
     .info-ico svg{ width:28px; height:28px; }
 
-    /* Variante azul suave para tu ícono de Horarios */
+    /* Variante azul suave para el ícono de Horarios */
     .info-ico.blue{
       background: rgba(63,131,248,.16); /* celeste suave */
       color:#2a5bd7;                    /* azul del trazo */
@@ -96,7 +109,7 @@
   <!-- ===== HÉROE ===== -->
   <section class="page-hero-soft">
     <div class="container">
-      <span class="pill soft"> Estamos aquí para ayudarte</span>
+      <span class="pill soft">Estamos aquí para ayudarte</span>
       <h1 class="title-xl">Contacto</h1>
       <p class="lead">
         Ponte en contacto con nuestro equipo. Estamos listos para atender tus consultas y
@@ -127,7 +140,8 @@
             C/San Francisco 5130, Santa Cruz de la Sierra
           </p>
           <div class="info-actions">
-            <a class="btn outline" href="https://maps.google.com/?q=San+Francisco+5130+Santa+Cruz+Bolivia" target="_blank" rel="noopener">
+            <!-- Tu link de Google Maps -->
+            <a class="btn outline" href="https://maps.app.goo.gl/4LaVBoh2auUbpwWC9" target="_blank" rel="noopener">
               Ver en Maps →
             </a>
           </div>
@@ -237,7 +251,6 @@
               <option>Consulta general</option>
               <option>Distribución agroquímica</option>
               <option>Productos farmacéuticos</option>
-              <option>Logística / Entregas</option>
             </select>
           </div>
 
