@@ -9,81 +9,69 @@
 
   <title>Contacto — COFISAGRO S.R.L.</title>
   <link rel="icon" type="image/png" href="assets/img/favicon.png" />
-  <!-- cache-bust del CSS global -->
-  <link rel="stylesheet" href="assets/css/style.css?v=15" />
+  <!-- Fuerza recarga del CSS global -->
+  <link rel="stylesheet" href="assets/css/style.css?v=16" />
 
-  <!-- Estilos mínimos locales (sin tocar style.css) -->
+  <!-- Estilos locales mínimos -->
   <style>
-    /* ——— Título verde estilo hero ——— */
+    /* Título "Contacto" en verde marca */
     .page-hero-soft .title-xl .accent { color: var(--brand); }
 
-    /* ——— Grid principal: tarjetas + formulario ——— */
-    .grid-contacto{
-      display:grid; grid-template-columns:1.05fr 1fr; gap:28px; align-items:start;
-    }
-    @media (max-width: 1000px){ .grid-contacto{ grid-template-columns:1fr; } }
+    /* Grid principal */
+    .grid-contacto{ display:grid; grid-template-columns:1.05fr 1fr; gap:28px; align-items:start; }
+    @media (max-width:1000px){ .grid-contacto{ grid-template-columns:1fr; } }
 
-    /* ——— Tarjetas (cards) ——— */
+    /* Tarjetas */
     .info-card{
       background:#fff; border:1px solid var(--g100); border-radius:16px;
       padding:22px; box-shadow:0 8px 24px rgba(0,0,0,.06);
       display:flex; gap:18px; align-items:flex-start;
     }
-    .info-card h3{ margin: 6px 0 6px; font-size: 20px; }
-    .info-card p{ margin: 0; }
+    .info-card h3{ margin:6px 0 6px; font-size:20px; }
+    .info-card p{ margin:0; }
 
-    /* ——— Pastilla de icono suave (look tipo Emergent) ——— */
+    /* Pastilla de icono (estilo Emergent) */
     .ico-soft{
       width:56px; height:56px; border-radius:16px;
-      background: rgba(49,194,74,.12); /* verde suave */
-      display:grid; place-items:center; flex: 0 0 56px;
+      background: rgba(49,194,74,.12);
+      display:grid; place-items:center; flex:0 0 56px;
+      font-size:0; /* si por error hay un emoji, no se verá */
     }
     .ico-soft svg{
-      width:28px; height:28px; stroke: var(--brand); fill: none; stroke-width: 2.2;
+      width:28px; height:28px; stroke: var(--brand); fill:none; stroke-width:2.2;
     }
-    /* variantes de color si las necesitas en otras páginas
-    .ico-soft.blue{ background: rgba(63,131,248,.14); }
-    .ico-soft.blue svg{ stroke:#2a5bd7; }
-    */
 
-    /* ——— Formulario ——— */
+    /* Formulario */
     .form-card{
       background:#fff; border:1px solid var(--g100); border-radius:16px;
       padding:22px; box-shadow:0 8px 24px rgba(0,0,0,.06);
     }
-    .form-grid{
-      display:grid; grid-template-columns:1fr 1fr; gap:16px;
-    }
-    .form-grid .full{ grid-column: 1 / -1; }
-    @media (max-width: 780px){ .form-grid{ grid-template-columns:1fr; } }
+    .form-grid{ display:grid; grid-template-columns:1fr 1fr; gap:16px; }
+    .form-grid .full{ grid-column:1 / -1; }
+    @media (max-width:780px){ .form-grid{ grid-template-columns:1fr; } }
 
-    .field{
-      display:flex; flex-direction:column; gap:8px;
-    }
+    .field{ display:flex; flex-direction:column; gap:8px; }
     .field label{ font-weight:700; }
-    .field input, .field select, .field textarea{
+    .field input,.field select,.field textarea{
       border:1px solid var(--g100); border-radius:12px; padding:12px 14px;
-      font: inherit; outline: none;
+      font:inherit; outline:none;
     }
-    .field input:focus, .field select:focus, .field textarea:focus{
-      border-color: var(--brand-600); box-shadow: 0 0 0 3px rgba(49,194,74,.15);
+    .field input:focus,.field select:focus,.field textarea:focus{
+      border-color:var(--brand-600); box-shadow:0 0 0 3px rgba(49,194,74,.15);
     }
 
-    /* ——— Botón de envío sin emoji ——— */
+    /* Botón de envío SIN emoji */
     .btn-form{
       display:inline-flex; justify-content:center; align-items:center;
-      background: var(--brand); color:#fff; font-weight:800;
+      background:var(--brand); color:#fff; font-weight:800;
       border:none; border-radius:12px; padding:14px 22px; cursor:pointer;
     }
-    .btn-form:hover{ filter: brightness(0.95); }
-
-    /* CTA final (idéntico look que usas en otras secciones) */
-    .cta-strip h2 strong{ color:#fff; }
+    .btn-form:hover{ filter:brightness(0.95); }
   </style>
 </head>
 <body>
 
-  <!-- ===== HEADER ===== -->
+  <!-- HEADER -->
   <header class="site-header">
     <div class="container nav">
       <a class="brand" href="index.html">
@@ -100,25 +88,25 @@
     </div>
   </header>
 
-  <!-- ===== HERO ===== -->
+  <!-- HERO -->
   <section class="page-hero-soft">
     <div class="container">
-      <span class="pill soft">💬 Estamos aquí para ayudarte</span>
+      <span class="pill soft">Estamos aquí para ayudarte</span>
       <h1 class="title-xl"><span class="accent">Contacto</span></h1>
       <p class="lead">Ponte en contacto con nuestro equipo. Estamos listos para atender tus consultas y brindarte la mejor atención personalizada.</p>
     </div>
   </section>
 
-  <!-- ===== CONTENIDO PRINCIPAL ===== -->
+  <!-- CUERPO -->
   <section class="section">
     <div class="container grid-contacto">
 
-      <!-- Columna Izquierda: tarjetas -->
+      <!-- Columna izquierda -->
       <div class="col">
         <!-- Ubicación -->
         <article class="info-card">
           <div class="ico-soft" aria-hidden="true">
-            <!-- Pin/Ubicación -->
+            <!-- Pin -->
             <svg viewBox="0 0 24 24">
               <path d="M12 21s-7-5.4-7-11a7 7 0 1 1 14 0c0 5.6-7 11-7 11z"/>
               <circle cx="12" cy="10" r="2.8"/>
@@ -133,7 +121,7 @@
           </div>
         </article>
 
-        <!-- Teléfono principal -->
+        <!-- Teléfono -->
         <article class="info-card" style="margin-top:14px;">
           <div class="ico-soft" aria-hidden="true">
             <!-- Teléfono -->
@@ -148,10 +136,10 @@
           </div>
         </article>
 
-        <!-- Celular / WhatsApp -->
+        <!-- Celular -->
         <article class="info-card" style="margin-top:14px;">
           <div class="ico-soft" aria-hidden="true">
-            <!-- Celular -->
+            <!-- Móvil -->
             <svg viewBox="0 0 24 24">
               <rect x="6" y="2" width="12" height="20" rx="2" ry="2"></rect>
               <line x1="12" y1="18" x2="12" y2="18"></line>
@@ -169,7 +157,7 @@
         <!-- Correo -->
         <article class="info-card" style="margin-top:14px;">
           <div class="ico-soft" aria-hidden="true">
-            <!-- Mail -->
+            <!-- Sobre -->
             <svg viewBox="0 0 24 24">
               <path d="M4 4h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2z"/>
               <path d="m22 6-10 7L2 6"/>
@@ -200,7 +188,7 @@
         </article>
       </div>
 
-      <!-- Columna Derecha: formulario -->
+      <!-- Columna derecha: formulario -->
       <div class="col">
         <div class="form-card">
           <h3 style="margin:0 0 12px;">Envíanos un Mensaje</h3>
@@ -263,7 +251,7 @@
     </div>
   </section>
 
-  <!-- ===== FOOTER ===== -->
+  <!-- FOOTER -->
   <footer>
     <div class="container foot">
       <div>
