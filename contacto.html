@@ -1,1 +1,267 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
 
+  <!-- Tu sitio vive en /cofisagro.com/ -->
+  <base href="/cofisagro.com/">
+
+  <title>Contacto — COFISAGRO S.R.L.</title>
+  <link rel="icon" type="image/png" href="assets/img/favicon.png" />
+  <link rel="stylesheet" href="assets/css/style.css?v=14" />
+
+  <!-- Estilos mínimos locales para el formulario / tarjetas (sin tocar style.css) -->
+  <style>
+    .page-hero-soft .title-xl { margin-top: 10px; }
+    .grid-contacto{
+      display:grid; grid-template-columns:1.05fr 1fr; gap:28px; align-items:start;
+    }
+    .info-card{
+      background:#fff; border:1px solid var(--g100);
+      border-radius:16px; padding:20px; margin-bottom:18px;
+      box-shadow:0 10px 28px rgba(0,0,0,.06);
+    }
+    .info-head{ display:flex; gap:14px; align-items:center; margin-bottom:8px; }
+    .ico-badge{
+      width:52px; height:52px; border-radius:14px; display:grid; place-items:center;
+      background:rgba(49,194,74,.12); color:var(--brand); font-size:24px; flex:0 0 52px;
+    }
+    .info-card a.link{
+      color:var(--brand); font-weight:700; text-decoration:none;
+    }
+    .info-card a.link:hover{ text-decoration:underline; }
+
+    /* Formulario */
+    .form-card{ background:#fff; border:1px solid var(--g100); border-radius:16px; padding:20px; box-shadow:0 10px 28px rgba(0,0,0,.06); }
+    .form-row{ display:grid; grid-template-columns:1fr 1fr; gap:16px; }
+    .form-group{ display:flex; flex-direction:column; gap:6px; margin-bottom:14px; }
+    .form-group label{ font-weight:700; }
+    .input, .textarea, .select{
+      width:100%; padding:12px 14px; border:1px solid var(--g100); border-radius:12px; font:inherit;
+      background:#fff; outline:none;
+    }
+    .input:focus, .textarea:focus, .select:focus{ border-color:var(--brand-600); box-shadow:0 0 0 3px rgba(49,194,74,.18); }
+    .textarea{ min-height:150px; resize:vertical; }
+    .btn-submit{
+      width:100%; display:inline-flex; justify-content:center; align-items:center;
+      background:var(--brand); color:#fff; padding:14px 18px; border-radius:12px; font-weight:800; border:none; cursor:pointer;
+      box-shadow:0 8px 20px rgba(0,0,0,.14);
+    }
+    .btn-submit:hover{ filter:brightness(1.05); transform:translateY(-1px); }
+    @media (max-width:1000px){
+      .grid-contacto{ grid-template-columns:1fr; }
+      .form-row{ grid-template-columns:1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ===== HEADER ===== -->
+  <header class="site-header">
+    <div class="container nav">
+      <a class="brand" href="index.html">
+        <img class="brand-logo" src="assets/img/Logotipo_Cofisagro_sin_fondo.png?v=2" alt="COFISAGRO" />
+        <span class="brand-text">COFISAGRO S.R.L.</span>
+      </a>
+      <nav class="menu">
+        <a href="index.html">Inicio</a>
+        <a href="nosotros.html">Nosotros</a>
+        <a href="mision-vision.html">Misión & Visión</a>
+        <a href="areas.html">Áreas de Negocio</a>
+        <a class="btn-cta" href="contacto.html">Contacto</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ===== HERO ===== -->
+  <section class="page-hero-soft">
+    <div class="container">
+      <span class="pill soft">💬 Estamos aquí para ayudarte</span>
+      <h1 class="title-xl">Contacto</h1>
+      <p class="lead">
+        Ponte en contacto con nuestro equipo. Estamos listos para atender tus consultas y
+        brindarte la mejor atención personalizada.
+      </p>
+    </div>
+  </section>
+
+  <!-- ===== CONTENIDO ===== -->
+  <section class="section">
+    <div class="container grid-contacto">
+
+      <!-- Columna izquierda: Información -->
+      <div>
+        <!-- Ubicación -->
+        <article class="info-card">
+          <div class="info-head">
+            <div class="ico-badge">📍</div>
+            <h3 style="margin:0">Ubicación</h3>
+          </div>
+          <p style="margin:.25rem 0 1rem">
+            B/California, Entre 5to y 6to anillo de la Doble Vía La Guardia,
+            C/San Francisco 5130, Santa Cruz de la Sierra
+          </p>
+          <a class="link" target="_blank" rel="noopener"
+             href="https://www.google.com/maps/search/?api=1&query=B%2FCalifornia%2C%205to-6to%20anillo%20Doble%20V%C3%ADa%20La%20Guardia%2C%20San%20Francisco%205130%2C%20Santa%20Cruz%20de%20la%20Sierra">
+            Ver en Google Maps →
+          </a>
+        </article>
+
+        <!-- Teléfono principal -->
+        <article class="info-card">
+          <div class="info-head">
+            <div class="ico-badge">☎️</div>
+            <h3 style="margin:0">Teléfono Principal</h3>
+          </div>
+          <p style="margin:.25rem 0 1rem">+591 (3) 3552378</p>
+          <a class="link" href="tel:+59133552378">Llamar ahora →</a>
+        </article>
+
+        <!-- Celular / WhatsApp -->
+        <article class="info-card">
+          <div class="info-head">
+            <div class="ico-badge">📱</div>
+            <h3 style="margin:0">Celular</h3>
+          </div>
+          <p style="margin:.25rem 0 1rem">+591 67781113</p>
+          <a class="link" target="_blank" rel="noopener"
+             href="https://wa.me/59167781113?text=Hola%20COFISAGRO%2C%20quisiera%20informaci%C3%B3n">
+            WhatsApp →
+          </a>
+        </article>
+
+        <!-- Correo -->
+        <article class="info-card">
+          <div class="info-head">
+            <div class="ico-badge">✉️</div>
+            <h3 style="margin:0">Correo Electrónico</h3>
+          </div>
+          <p style="margin:.25rem 0 1rem">cofisagro@gmail.com</p>
+          <a class="link" href="mailto:cofisagro@gmail.com">Enviar email →</a>
+        </article>
+
+        <!-- Horarios -->
+        <article class="info-card">
+          <div class="info-head">
+            <div class="ico-badge" style="background:rgba(63,131,248,.12); color:#2a5bd7">🕒</div>
+            <h3 style="margin:0">Horarios de Atención</h3>
+          </div>
+          <div style="margin-top:8px">
+            <div style="display:flex;justify-content:space-between;padding:10px 0;border-bottom:1px solid var(--g100)">
+              <span>Lunes - Viernes</span><strong>8:00 AM - 4:00 PM</strong>
+            </div>
+            <div style="display:flex;justify-content:space-between;padding:10px 0;border-bottom:1px solid var(--g100)">
+              <span>Sábado</span><strong>9:00 AM - 12:00 PM</strong>
+            </div>
+            <div style="display:flex;justify-content:space-between;padding:10px 0">
+              <span>Domingo</span><strong>Cerrado</strong>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <!-- Columna derecha: Formulario -->
+      <div class="form-card">
+        <form action="mailto:cofisagro@gmail.com" method="post" enctype="text/plain">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="nombre">Nombre completo *</label>
+              <input id="nombre" name="Nombre" required class="input" placeholder="Tu nombre completo" />
+            </div>
+            <div class="form-group">
+              <label for="email">Correo electrónico *</label>
+              <input id="email" name="Email" type="email" required class="input" placeholder="tu@email.com" />
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="tel">Teléfono</label>
+              <input id="tel" name="Telefono" class="input" placeholder="+591 ..." />
+            </div>
+            <div class="form-group">
+              <label for="empresa">Empresa</label>
+              <input id="empresa" name="Empresa" class="input" placeholder="Nombre de tu empresa" />
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="tipo">Tipo de consulta</label>
+            <select id="tipo" name="Tipo" class="select">
+              <option>Consulta general</option>
+              <option>Información de productos</option>
+              <option>Logística / Distribución</option>
+              <option>Otro</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="msg">Mensaje *</label>
+            <textarea id="msg" name="Mensaje" class="textarea" required placeholder="Describe tu consulta o necesidad..."></textarea>
+          </div>
+
+          <button class="btn-submit" type="submit">✈️&nbsp; Enviar Mensaje</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CTA FINAL ===== -->
+  <section class="cta-strip">
+    <div class="container">
+      <h2>¿Listo para hacer negocios?</h2>
+      <p>Contáctanos hoy mismo y descubre cómo COFISAGRO S.R.L. puede ser tu
+        socio estratégico en productos agroquímicos y farmacéuticos.</p>
+      <div class="cta-buttons">
+        <a class="btn-primary" href="mailto:cofisagro@gmail.com">Enviar Email Directo</a>
+        <a class="btn-secondary" href="tel:+59133552378">Llamar Ahora</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer>
+    <div class="container foot">
+      <div>
+        <div class="foot-brand" style="display:flex;gap:10px;align-items:center;margin-bottom:8px">
+          <img src="assets/img/favicon.png?v=3" alt="Logo Cofisagro" class="foot-logo" style="width:28px;height:28px;border-radius:999px;display:block">
+          <strong>COFISAGRO S.R.L.</strong>
+        </div>
+        <p>Empresa boliviana especializada en distribución de productos agroquímicos y farmacéuticos desde 2010.</p>
+      </div>
+      <div>
+        <h4>Navegación</h4>
+        <div><a href="index.html">Inicio</a></div>
+        <div><a href="nosotros.html">Nosotros</a></div>
+        <div><a href="mision-vision.html">Misión & Visión</a></div>
+        <div><a href="areas.html">Áreas de Negocio</a></div>
+        <div><a href="contacto.html">Contacto</a></div>
+      </div>
+      <div>
+        <h4>Sectores</h4>
+        <div><a href="#">Agrícola</a></div>
+        <div><a href="#">Farmacéutico</a></div>
+        <div><a href="#">Distribución</a></div>
+        <div><a href="#">Comercialización</a></div>
+      </div>
+      <div>
+        <h4>Contacto</h4>
+        <div>Santa Cruz de la Sierra, Bolivia</div>
+        <div><a href="mailto:cofisagro@gmail.com">cofisagro@gmail.com</a></div>
+        <div><a href="tel:+59133552378">(+591) 3 3552378</a></div>
+      </div>
+    </div>
+    <div class="container bottom-bar">
+      <small>© <span id="y"></span> COFISAGRO S.R.L.</small>
+    </div>
+  </footer>
+
+  <script>
+    // Año del footer y resaltar item activo
+    const y = document.getElementById('y'); if (y) y.textContent = new Date().getFullYear();
+    const path = location.pathname.split('/').pop() || 'index.html';
+    document.querySelectorAll('nav.menu a').forEach(a => { if (a.getAttribute('href') === path) a.style.opacity = '.85'; });
+  </script>
+</body>
+</html>
