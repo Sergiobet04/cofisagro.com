@@ -4,16 +4,100 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <!-- Ruta base para que todos los links funcionen desde cualquier página -->
+  <!-- Tu sitio vive en /cofisagro.com/ -->
   <base href="/cofisagro.com/">
 
   <title>Áreas de Negocio — COFISAGRO S.R.L.</title>
   <link rel="icon" type="image/png" href="assets/img/favicon.png" />
-  <link rel="stylesheet" href="assets/css/style.css?v=15" />
+  <link rel="stylesheet" href="assets/css/style.css?v=14" />
+
+  <!-- ===== Estilos locales mínimos para esta página ===== -->
+  <style>
+    /* HERO */
+    .page-hero-soft .title-xl strong{ color: var(--brand); }
+    .pill .ico{ width:18px; height:18px; display:inline-block; margin-right:8px; vertical-align:-3px; }
+
+    /* SECCIONES */
+    .sector{ padding: 36px 0; }
+    .sector .grid{
+      display:grid; grid-template-columns:1.05fr 1fr; gap:28px; align-items:center;
+    }
+    .sector.reverse .grid{ grid-template-columns:1fr 1.05fr; }
+    .sector h2{ font-size: clamp(28px, 3.6vw, 44px); margin:6px 0 14px; font-weight:900; }
+    .accent-green{ color: var(--brand); }
+    .accent-blue{ color:#2563eb; }
+
+    /* ÍCONO DEL TÍTULO */
+    .title-head{ display:flex; align-items:center; gap:14px; margin-bottom:8px; }
+    .title-ico{
+      width:56px; height:56px; border-radius:16px;
+      background: rgba(49,194,74,.14); color: var(--brand);
+      display:grid; place-items:center;
+    }
+    .title-ico svg{ width:28px; height:28px; }
+    .title-ico.blue{ background: rgba(63,131,248,.16); color:#2a5bd7; }
+
+    /* CHIPS */
+    .chips{ display:flex; flex-wrap:wrap; gap:10px; margin-top:12px; }
+    .chip{
+      padding:10px 12px; border-radius:999px; font-weight:700;
+      background:#ecfdf0; color: var(--brand); border:1px solid rgba(49,194,74,.25);
+    }
+    .chip.blue{ background:#eef4ff; color:#2a5bd7; border-color: rgba(63,131,248,.28); }
+
+    /* CHECKLIST */
+    .checklist{ margin-top:14px; display:grid; gap:10px; }
+    .check{ display:flex; gap:10px; align-items:flex-start; }
+    .check svg{ width:20px; height:20px; color:var(--brand); margin-top:3px; flex:none; }
+
+    /* FIGURA/IMAGEN */
+    .figure{
+      position:relative; border-radius:18px; overflow:hidden;
+      border:1px solid var(--g100); box-shadow:0 10px 28px rgba(0,0,0,.08);
+      background:#fff;
+    }
+    .figure img{ width:100%; height:520px; object-fit:cover; display:block; }
+    .overlay{
+      position:absolute; left:18px; bottom:18px; right:18px;
+      background:rgba(255,255,255,.92); border:1px solid var(--g100);
+      border-radius:14px; padding:14px 16px; box-shadow:0 10px 26px rgba(0,0,0,.06);
+    }
+    .overlay strong{ display:block; margin-bottom:4px; }
+
+    /* POR QUÉ ELEGIR */
+    .why{ padding: 44px 0 64px; }
+    .why h2{ font-size: clamp(26px, 3.4vw, 40px); margin-bottom:10px; }
+    .why .cards{
+      margin-top:16px; display:grid; gap:14px;
+      grid-template-columns: repeat(2, minmax(260px,1fr));
+    }
+    .why .card{
+      background:#ecfdf0; border:1px solid rgba(49,194,74,.20);
+      border-radius:14px; padding:14px 16px; display:flex; gap:10px; align-items:flex-start;
+    }
+    .why .card svg{ width:20px; height:20px; color:var(--brand); margin-top:3px; flex:none; }
+
+    /* CTA */
+    .cta-row{ margin-top:22px; }
+    .btn-quote{
+      background: var(--brand); color:#fff; padding:14px 20px; border-radius:12px;
+      font-weight:800; display:inline-flex; gap:10px; align-items:center; text-decoration:none;
+      box-shadow:0 10px 24px rgba(0,0,0,.10);
+      transition: transform .15s ease, filter .15s ease;
+    }
+    .btn-quote:hover{ transform:translateY(-2px); filter:brightness(1.03); }
+    .btn-quote svg{ width:18px; height:18px; }
+
+    @media (max-width: 1000px){
+      .sector .grid, .sector.reverse .grid{ grid-template-columns:1fr; }
+      .figure img{ height: 360px; }
+      .why .cards{ grid-template-columns: 1fr; }
+    }
+  </style>
 </head>
 <body>
 
-  <!-- ===== HEADER (igual que la home) ===== -->
+  <!-- ===== HEADER ===== -->
   <header class="site-header">
     <div class="container nav">
       <a class="brand" href="index.html">
@@ -23,75 +107,202 @@
       <nav class="menu">
         <a href="index.html">Inicio</a>
         <a href="nosotros.html">Nosotros</a>
-        <a href="mision-vision.html">Misión &amp; Visión</a>
+        <a href="mision-vision.html">Misión & Visión</a>
         <a href="areas.html">Áreas de Negocio</a>
         <a class="btn-cta" href="contacto.html">Contacto</a>
       </nav>
     </div>
   </header>
 
-  <!-- ===== HERO INTERNO ===== -->
+  <!-- ===== HERO ===== -->
   <section class="page-hero-soft">
     <div class="container">
-      <span class="pill soft">🏷️ Nuestros Servicios</span>
-      <h1 class="title-xl">Áreas de <span class="accent">Negocio</span></h1>
+      <span class="pill soft">
+        <span class="ico">
+          <!-- Hoja -->
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M3 21s3-6 9-6 9 6 9 6"/>
+            <path d="M9 15V3a6 6 0 0 1 6 6v6"/>
+          </svg>
+        </span>
+        Nuestras Especialidades
+      </span>
+      <h1 class="title-xl">Áreas de <strong>Negocio</strong></h1>
       <p class="lead">
-        Operamos en los sectores <strong>agrícola</strong> y <strong>farmacéutico</strong>, con un enfoque en calidad,
-        cumplimiento y distribución eficiente en Santa Cruz y todo Bolivia.
+        Especializados en dos sectores clave para el desarrollo de Bolivia:
+        productos agroquímicos y farmacéuticos con calidad garantizada.
       </p>
     </div>
   </section>
-
-  <!-- ===== LISTA DE ÁREAS ===== -->
-  <section class="section">
-    <div class="container">
-      <div class="grid2">
-        <!-- Agrícola -->
-        <article class="card">
-          <img src="assets/img/area-agricola.jpg" alt="Extensión de cultivos agrícolas" style="width:100%;height:240px;object-fit:cover;border-radius:12px">
-          <h2 style="margin-top:14px">Sector Agrícola</h2>
-          <p>
-            Venta y distribución de <strong>fertilizantes, pesticidas, herbicidas, fungicidas e insecticidas</strong>.
-            Conectamos fabricantes internacionales con productores bolivianos, garantizando calidad y disponibilidad.
-          </p>
-          <div class="pills">
-            <span>Fertilizantes</span><span>Pesticidas</span><span>Herbicidas</span><span>Fungicidas</span>
+    <!-- ===== SECTOR AGRÍCOLA ===== -->
+  <section class="sector">
+    <div class="container grid">
+      <div>
+        <div class="title-head">
+          <div class="title-ico" aria-hidden="true">
+            <!-- Hoja -->
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M3 21s3-6 9-6 9 6 9 6"/>
+              <path d="M9 15V3a6 6 0 0 1 6 6v6"/>
+            </svg>
           </div>
-        </article>
+          <h2>Sector <span class="accent-green">Agrícola</span></h2>
+        </div>
 
-        <!-- Farmacéutico -->
-        <article class="card">
-          <img src="assets/img/area-farmaceutica.jpg" alt="Medicamentos y productos farmacéuticos" style="width:100%;height:240px;object-fit:cover;border-radius:12px">
-          <h2 style="margin-top:14px">Sector Farmacéutico</h2>
-          <p>
-            Comercialización y distribución de <strong>medicamentos y productos farmacéuticos</strong> a farmacias,
-            hospitales y centros de salud, con altos estándares de cumplimiento y trazabilidad.
-          </p>
-          <div class="pills">
-            <span>Medicamentos</span><span>Productos farmacéuticos</span><span>Suministros médicos</span>
+        <p>
+          Venta y distribución de fertilizantes, pesticidas, herbicidas, fungicidas e insecticidas.
+          Operamos como intermediario entre fabricantes internacionales y productores agrícolas bolivianos,
+          garantizando productos de alta calidad para el desarrollo del sector agropecuario.
+        </p>
+
+        <div class="chips" aria-label="Productos que distribuimos">
+          <span class="chip">Fertilizantes</span>
+          <span class="chip">Pesticidas</span>
+          <span class="chip">Herbicidas</span>
+          <span class="chip">Fungicidas</span>
+          <span class="chip">Insecticidas</span>
+        </div>
+
+        <div class="checklist">
+          <div class="check">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>
+            Productos de fabricantes internacionales reconocidos
           </div>
-        </article>
+          <div class="check">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>
+            Certificaciones de calidad garantizada
+          </div>
+          <div class="check">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>
+            Asesoramiento técnico especializado
+          </div>
+          <div class="check">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>
+            Entregas puntuales en toda la región
+          </div>
+        </div>
       </div>
 
-      <div style="text-align:center;margin-top:26px">
-        <a class="btn" href="contacto.html">Solicitar Cotización →</a>
+      <figure class="figure">
+        <img src="assets/img/area-agricola.jpg" alt="Extensión de cultivos agrícolas en Santa Cruz" />
+        <figcaption class="overlay">
+          <strong>Compromiso Agrícola</strong>
+          Apoyamos el desarrollo del sector agropecuario boliviano con productos de calidad internacional.
+        </figcaption>
+      </figure>
+    </div>
+  </section>
+  <!-- ===== SECTOR FARMACÉUTICO ===== -->
+  <section class="sector reverse">
+    <div class="container grid">
+      <figure class="figure">
+        <img src="assets/img/area-farmaceutica.jpg" alt="Medicamentos y productos farmacéuticos" />
+        <figcaption class="overlay">
+          <strong>Salud Confiable</strong>
+          Distribución responsable de medicamentos y productos farmacéuticos con altos estándares de calidad.
+        </figcaption>
+      </figure>
+
+      <div>
+        <div class="title-head">
+          <div class="title-ico blue" aria-hidden="true">
+            <!-- icono link/fármaco -->
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M10 13a5 5 0 0 0 7.07 0l2.83-2.83a5 5 0 1 0-7.07-7.07L10 3.29"/>
+              <path d="M14 11a5 5 0 0 0-7.07 0L4.1 13.83a5 5 0 0 0 7.07 7.07L14 18.71"/>
+            </svg>
+          </div>
+          <h2>Sector <span class="accent-blue">Farmacéutico</span></h2>
+        </div>
+
+        <p>
+          Comercialización y distribución de medicamentos y productos farmacéuticos a farmacias,
+          hospitales y centros de salud del departamento de Santa Cruz, con altos estándares de
+          cumplimiento y confiabilidad.
+        </p>
+
+        <div class="chips" aria-label="Productos que distribuimos">
+          <span class="chip blue">Medicamentos</span>
+          <span class="chip blue">Productos farmacéuticos</span>
+          <span class="chip blue">Suministros médicos</span>
+        </div>
+
+        <div class="checklist" style="margin-top:18px">
+          <div class="check">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M20 6 9 17l-5-5"/>
+            </svg>
+            Farmacias y cadenas farmacéuticas
+          </div>
+          <div class="check">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M20 6 9 17l-5-5"/>
+            </svg>
+            Hospitales públicos y privados
+          </div>
+          <div class="check">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M20 6 9 17l-5-5"/>
+            </svg>
+            Centros de salud especializados
+          </div>
+          <div class="check">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M20 6 9 17l-5-5"/>
+            </svg>
+            Clínicas médicas del departamento
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- ===== CTA STRIP ===== -->
-  <section class="cta-strip">
+  <!-- ===== ¿POR QUÉ ELEGIR COFISAGRO? ===== -->
+  <section class="why">
     <div class="container">
-      <h2>¿Listo para trabajar con nosotros?</h2>
-      <p>Contáctanos hoy mismo y descubre cómo podemos ayudarte con soluciones de calidad en productos agroquímicos y farmacéuticos.</p>
-      <div class="cta-buttons">
-        <a class="btn-primary" href="contacto.html">Contactar Ahora</a>
-        <a class="btn-secondary" href="areas.html">Ver Servicios</a>
+      <h2>¿Por qué elegir <span class="accent-green">COFISAGRO</span>?</h2>
+      <p style="max-width:840px">
+        Nuestra experiencia, compromiso y calidad nos distinguen en el mercado boliviano.
+      </p>
+
+      <div class="cards">
+        <div class="card">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>
+          Más de 15 años de experiencia en el mercado
+        </div>
+        <div class="card">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>
+          Red de distribución consolidada
+        </div>
+        <div class="card">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>
+          Productos certificados y de calidad garantizada
+        </div>
+        <div class="card">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>
+          Atención personalizada y asesoramiento técnico
+        </div>
+        <div class="card">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>
+          Precios competitivos
+        </div>
+        <div class="card">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>
+          Entrega puntual y confiable
+        </div>
+      </div>
+
+      <div class="cta-row">
+        <a class="btn-quote" href="contacto.html">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M5 12h14M12 5l7 7-7 7"/>
+          </svg>
+          Solicita una Cotización
+        </a>
       </div>
     </div>
   </section>
-
-  <!-- ===== FOOTER (igual que la home) ===== -->
+    <!-- ===== FOOTER ===== -->
   <footer>
     <div class="container">
       <div class="foot">
@@ -123,8 +334,8 @@
         <div>
           <h4>Contacto</h4>
           <div>Santa Cruz de la Sierra, Bolivia</div>
-          <div>Email: cofisagro@gmail.com</div>
-          <div>Tel: (+591) 3 3552378</div>
+          <div>Email: <a href="mailto:cofisagro@gmail.com">cofisagro@gmail.com</a></div>
+          <div>Tel: <a href="tel:+59133552378">(+591) 3 3552378</a></div>
         </div>
       </div>
 
@@ -135,11 +346,10 @@
     </div>
   </footer>
 
-  <!-- WhatsApp flotante (opcional, mismo de la home) -->
-  <a class="whatsapp" href="https://wa.me/59167781113?text=Hola%20COFISAGRO%2C%20quisiera%20informaci%C3%B3n" target="_blank" rel="noopener">WhatsApp</a>
-
   <script>
+    // Año dinámico en el footer
     document.getElementById('year').textContent = new Date().getFullYear();
   </script>
+
 </body>
 </html>
