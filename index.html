@@ -32,66 +32,40 @@
     </div>
   </header>
 
-  <!-- HERO unificado con overlay (Home) -->
-<section id="inicio" class="hero-overlay">
-  <picture aria-hidden="true">
-    <!-- WebP -->
-    <source
-      type="image/webp"
-      srcset="
-        assets/img/inicio-banner-480.webp 480w,
-        assets/img/inicio-banner-768.webp 768w,
-        assets/img/inicio-banner-1024.webp 1024w,
-        assets/img/inicio-banner-1440.webp 1440w,
-        assets/img/inicio-banner-1920.webp 1920w
-      "
-      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 100vw, 100vw">
-    <!-- JPG fallback (mantén el nombre principal existente) -->
-    <source
-      type="image/jpeg"
-      srcset="
-        assets/img/inicio-banner-480.jpg 480w,
-        assets/img/inicio-banner-768.jpg 768w,
-        assets/img/inicio-banner-1024.jpg 1024w,
-        assets/img/inicio-banner-1440.jpg 1440w,
-        assets/img/inicio-banner.jpg 1920w
-      "
-      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 100vw, 100vw">
-    <img
-      src="assets/img/inicio-banner.jpg"
-      alt="Operaciones logísticas y productos de COFISAGRO para los sectores agrícola y farmacéutico"
-      class="hero-bg"
-      loading="eager"
-      fetchpriority="high"
-      decoding="async">
-  </picture>
+ <!-- BANNER -->
+<section class="hero-banner">
+  <img src="assets/img/inicio-banner.jpg" alt="Paisaje agrícola al amanecer">
+</section>
 
-  <div class="hero-overlay__shade" aria-hidden="true"></div>
+<!-- HERO PRINCIPAL -->
+<section class="hero" id="inicio">
+  <div class="container">
+    <div class="grid">
+      <div>
+        <span class="badge">Empresa boliviana desde 2010</span>
+        <h1>COFISAGRO S.R.L. — Calidad y Confianza</h1>
+        <p>Distribución de productos agroquímicos y farmacéuticos en Bolivia, con procesos eficientes y cumplimiento.</p>
+        <div style="display:flex;gap:12px;margin-top:14px">
+          <a class="btn" href="areas.html">Nuestros Servicios</a>
+          <a class="btn outline" href="contacto.html">Contáctanos</a>
+        </div>
+        <div class="metrics" style="margin-top:14px">
+          <div class="metric"><strong>15+</strong><br><small>Años</small></div>
+          <div class="metric"><strong>500+</strong><br><small>Clientes</small></div>
+          <div class="metric"><strong>1000+</strong><br><small>Productos</small></div>
+          <div class="metric"><strong>100%</strong><br><small>Calidad</small></div>
+        </div>
+      </div>
 
-  <div class="container hero-overlay__content">
-    <div class="hero-eyebrow">
-      <span class="chip-inline">Agro</span>
-      <span class="chip-inline">Farma</span>
+      <div class="card">
+        <strong>Qué hacemos</strong>
+        <ul>
+          <li>Distribución de agroquímicos: fertilizantes, herbicidas, fungicidas e insecticidas.</li>
+          <li>Comercialización de medicamentos y productos farmacéuticos.</li>
+          <li>Logística eficiente y cumplimiento normativo.</li>
+        </ul>
+      </div>
     </div>
-
-    <h1 class="hero-title">Distribución confiable en Agro y Farma</h1>
-
-    <p class="hero-subtitle">
-      Productos de calidad certificada, trazabilidad por lote y logística eficiente
-      para productores, farmacias y hospitales en Santa Cruz y zonas de influencia.
-    </p>
-
-    <div class="hero-ctas">
-      <a class="btn" href="areas.html" aria-label="Ver portafolio de áreas y servicios">Ver portafolio</a>
-      <a class="btn outline" href="contacto.html" aria-label="Contactar a un asesor">Contactar asesor</a>
-    </div>
-
-    <ul class="hero-trust">
-      <li>Calidad certificada</li>
-      <li>Trazabilidad por lote</li>
-      <li>Logística eficiente</li>
-      <li>Asesoría técnica</li>
-    </ul>
   </div>
 </section>
 
